@@ -1,23 +1,11 @@
-const React = require('react');
-const classNames = require('classnames');
+import React, {Component, PropTypes} from 'react';
+import classNames from 'classnames';
 
-const ModificatorType = React.PropTypes.oneOf(['xs', 'sm', 'md', 'lg']);
+const ModificatorType = PropTypes.oneOf(['xs', 'sm', 'md', 'lg']);
 const modificatorKeys = ['start', 'center', 'end', 'top', 'middle', 'bottom', 'around', 'between', 'first', 'last'];
 
-const Row = React.createClass({
-  propTypes: {
-    reverse: React.PropTypes.bool,
-    start: ModificatorType,
-    center: ModificatorType,
-    end: ModificatorType,
-    top: ModificatorType,
-    middle: ModificatorType,
-    bottom: ModificatorType,
-    around: ModificatorType,
-    between: ModificatorType,
-    first: ModificatorType,
-    last: ModificatorType
-  },
+export default class Row extends Component {
+
   render() {
     const modificators = ['row'];
     for (let i = 0; i < modificatorKeys.length; ++i) {
@@ -40,6 +28,18 @@ const Row = React.createClass({
       </div>
     );
   }
-});
+}
 
-module.exports = Row;
+Row.propTypes = {
+  reverse: PropTypes.bool,
+  start: ModificatorType,
+  center: ModificatorType,
+  end: ModificatorType,
+  top: ModificatorType,
+  middle: ModificatorType,
+  bottom: ModificatorType,
+  around: ModificatorType,
+  between: ModificatorType,
+  first: ModificatorType,
+  last: ModificatorType
+};
