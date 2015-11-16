@@ -2,6 +2,9 @@ react-flexbox-grid [![Circle CI](https://circleci.com/gh/roylee0704/react-flexbo
 ==============
 React Component based on [flexboxgrid](https://goo.gl/imrHBZ)
 
+It is written in ES6 and requires an ES6 to ES5 transpiler. If there is need for it I can add a transpiled version to the repo.
+
+
 Installation
 ------------
 
