@@ -12,10 +12,28 @@ Installation
 npm install react-flexbox-grid
 ```
 
+
+Pre-requisite (flexboxgrid)
+---------------------------
+
+# via NPM
+
+```sh
+npm install flexboxgrid
+```
+
+Just import `flexboxgrid` in the entry-point of your application.
+
+```jsx
+import 'flexboxgrid'
+import React from 'react'
+import Container from 'javascripts/container'
+
+React.render(<Container />, document.querySelector('#main'))
+```
+
 Usage
 -----
-
-Require `lib/flexgrid.css`, or `less/flexgrid.less` into your project.
 
 ```jsx
 const {Grid, Row, Col} = require('react-flexbox-grid');
