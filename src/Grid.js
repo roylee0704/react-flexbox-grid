@@ -1,20 +1,18 @@
-const React = require('react');
-const classNames = require('classnames');
+import React from 'react';
+import classNames from 'classnames';
 
-const Grid = React.createClass({
-  propTypes: {
-    fluid: React.PropTypes.bool
-  },
+export default class Grid extends React.Component{
   render() {
     const containerClass = this.props.fluid ? 'container-fluid' : 'container';
     const className = classNames(this.props.className, containerClass);
-
     return (
       <div {...this.props} className={className}>
         {this.props.children}
       </div>
     );
   }
-});
+}
 
-module.exports = Grid;
+Grid.propTypes = {
+  fluid: React.PropTypes.bool
+};
