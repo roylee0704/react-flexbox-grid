@@ -34,7 +34,7 @@
     "babel-runtime": ">=5.1.11",
     "eslint": "^0.22.1",
     "eslint-plugin-react": "^2.2.0",
-    "jest-cli": "^0.5.3",
+    "jest-cli": "^0.5.2",
     "less": "^2.5.1",
     "less-plugin-autoprefix": "^1.4.2",
     "react": ">=0.12.0",
