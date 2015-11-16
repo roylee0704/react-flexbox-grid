@@ -1,0 +1,67 @@
+{
+  "name": "react-flexbox-grid",
+  "version": "0.1.0",
+  "description": "React Component based on flexboxgrid",
+  "keywords": [
+    "browser",
+    "react",
+    "react-component",
+    "flexbox",
+    "grid",
+    "css",
+    "flexboxgrid"
+  ],
+  "author": "Roy Lee <roylee0704@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/roylee0704/react-flexbox-grid.git"
+  },
+  "homepage": "https://github.com/roylee0704/react-flexbox-grid",
+  "bugs": {
+    "url": "https://github.com/roylee0704/react-flexbox-grid/issues"
+  },
+  "main": "lib/index.js",
+  "peerDependencies": {
+    "react": ">=0.12.0",
+    "babel-runtime": ">=5.1.11",
+    "classnames": ">=2.1.2"
+  },
+  "devDependencies": {
+    "babel": "^5.1.11",
+    "babel-eslint": "^3.0.1",
+    "babel-jest": "^5.0.1",
+    "babel-runtime": ">=5.1.11",
+    "eslint": "^0.22.1",
+    "eslint-plugin-react": "^2.2.0",
+    "jest-cli": "^0.4.0",
+    "react": ">=0.12.0",
+    "classnames": ">=2.1.2"
+  },
+  "scripts": {
+    "pretest": "eslint src/",
+    "test": "jest src/",
+    "prepublish": "npm run build",
+    "prebuild": "rm -rf lib",
+    "build": "npm run build-js",
+    "build-js": "babel -d lib/ src/"
+  },
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
+    "testFileExtensions": [
+      "jsx",
+      "js"
+    ],
+    "moduleFileExtensions": [
+      "jsx",
+      "js",
+      "json"
+    ],
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react",
+      "<rootDir>/node_modules/babel",
+      "<rootDir>/node_modules/babel-runtime",
+      "<rootDir>/node_modules/classnames"
+    ]
+  }
+}
