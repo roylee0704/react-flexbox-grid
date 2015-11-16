@@ -13,10 +13,10 @@ npm install react-flexbox-grid
 ```
 
 
-Pre-requisite (flexboxgrid)
----------------------------
+Pre-requisite
+-------------
 
-First, install flexboxgrid via `npm`
+First, make sure you have [flexboxgrid](https://goo.gl/imrHBZ) installed.
 
 ```sh
 npm install flexboxgrid
