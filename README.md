@@ -1,5 +1,6 @@
-React-FlexBox-Grid [![Circle CI](https://circleci.com/gh/roylee0704/react-flexbox-grid.svg?style=svg)](https://circleci.com/gh/roylee0704/react-flexbox-grid)
+react-flexBox-grid [![Circle CI](https://circleci.com/gh/roylee0704/react-flexbox-grid.svg?style=svg)](https://circleci.com/gh/roylee0704/react-flexbox-grid)
 ==============
+React Component based on [flexboxgrid](https://goo.gl/imrHBZ)
 
 Installation
 ------------
