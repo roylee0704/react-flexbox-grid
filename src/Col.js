@@ -1,27 +1,22 @@
-const React = require('react');
+import React, {Component, PropTypes} from 'react';
 
-const Col = React.createClass({
-  propTypes: {
-    xs: React.PropTypes.number,
-    sm: React.PropTypes.number,
-    md: React.PropTypes.number,
-    lg: React.PropTypes.number,
-    xsOffset: React.PropTypes.number,
-    smOffset: React.PropTypes.number,
-    mdOffset: React.PropTypes.number,
-    lgOffset: React.PropTypes.number,
-    reverse: React.PropTypes.bool
-  },
-  _classMap: {
-    xs: 'col-xs-',
-    sm: 'col-sm-',
-    md: 'col-md-',
-    lg: 'col-lg-',
-    xsOffset: 'col-xs-offset-',
-    smOffset: 'col-sm-offset-',
-    mdOffset: 'col-md-offset-',
-    lgOffset: 'col-lg-offset-'
-  },
+export default class Col extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this._classMap = {
+      xs: 'col-xs-',
+      sm: 'col-sm-',
+      md: 'col-md-',
+      lg: 'col-lg-',
+      xsOffset: 'col-xs-offset-',
+      smOffset: 'col-sm-offset-',
+      mdOffset: 'col-md-offset-',
+      lgOffset: 'col-lg-offset-'
+    };
+  }
+
   render() {
     let classes = [];
 
@@ -43,6 +38,16 @@ const Col = React.createClass({
       className: classes.join(' ')
     }), this.props.children);
   }
-});
+}
 
-module.exports = Col;
+Col.propTypes = {
+  xs: PropTypes.number,
+  sm: PropTypes.number,
+  md: PropTypes.number,
+  lg: PropTypes.number,
+  xsOffset: PropTypes.number,
+  smOffset: PropTypes.number,
+  mdOffset: PropTypes.number,
+  lgOffset: PropTypes.number,
+  reverse: PropTypes.bool
+};
