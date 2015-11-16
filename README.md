@@ -1,12 +1,11 @@
-React Flexgrid
+React-FlexBox-Grid [![Circle CI](https://circleci.com/gh/roylee0704/react-flexbox-grid.svg?style=svg)](https://circleci.com/gh/roylee0704/react-flexbox-grid)
 ==============
 
-[![Circle CI](https://circleci.com/gh/roylee0704/react-flexbox-grid.svg?style=svg)](https://circleci.com/gh/roylee0704/react-flexbox-grid)
 Installation
 ------------
 
 ```
-npm install react-flex-grid
+npm install react-flexbox-grid
 ```
 
 Usage
@@ -15,7 +14,7 @@ Usage
 Require `lib/flexgrid.css`, or `less/flexgrid.less` into your project.
 
 ```jsx
-const {Grid, Row, Col} = require('react-flex-grid');
+const {Grid, Row, Col} = require('react-flexbox-grid');
 
 const App = React.createClass({
   render() {
