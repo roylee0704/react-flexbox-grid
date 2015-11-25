@@ -23,51 +23,52 @@
   },
   "main": "lib/index.js",
   "peerDependencies": {
-    "react": ">=0.12.0",
-    "babel-runtime": ">=5.1.11",
-    "classnames": ">=2.1.2",
-    "flexboxgrid": "^6.2.0"
+    "react": "^0.14.3",
+    "flexboxgrid": "^6.3.0"
   },
   "devDependencies": {
-    "babel": "^5.1.11",
-    "babel-eslint": "^3.0.1",
-    "babel-jest": "^5.0.1",
-    "babel-runtime": ">=5.1.11",
-    "eslint": "^0.22.1",
-    "eslint-plugin-react": "^2.2.0",
-    "jest-cli": "^0.8.0",
-    "less": "^2.5.1",
-    "less-plugin-autoprefix": "^1.4.2",
-    "react": ">=0.12.0",
-    "react-dom": ">=0.12.0",
-    "react-addons-test-utils": ">=0.12.0",
-    "classnames": ">=2.1.2"
+    "babel": "^5.8.23",
+    "babel-core": "^5.8.23",
+    "babel-eslint": "^4.1.5",
+    "babel-loader": "^5.3.2",
+    "babel-plugin-react-transform": "^1.1.1",
+
+
+    "eslint": "^1.10.1",
+    "eslint-config-airbnb": "^1.0.0",
+    "eslint-plugin-react": "^3.10.0",
+
+    "expect": "^1.13.0",
+    "isparta": "^4.0.0",
+    "jsdom": "^7.0.2",
+    "mocha": "^2.3.4",
+
+    "react-hot-loader": "^1.3.0",
+    "react-transform-catch-errors": "^1.0.0",
+    "react-transform-hmr": "^1.0.1",
+    "redbox-react": "^1.1.1",
+
+    "rimraf": "^2.4.4",
+
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.0",
+
+    "react": "^0.14.3",
+    "react-addons-test-utils": "^0.14.0",
+    "react-dom": "^0.14.3",
+
+    "classnames": ">=2.1.2",
+    "flexboxgrid": "^6.3.0"
   },
   "scripts": {
-    "pretest": "eslint src/",
-    "test": "jest src/",
-    "prepublish": "npm run build",
-    "prebuild": "rm -rf lib",
-    "build": "npm run build-js",
-    "build-js": "babel -d lib/ src/"
-  },
-  "jest": {
-    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
-    "testFileExtensions": [
-      "jsx",
-      "js"
-    ],
-    "moduleFileExtensions": [
-      "jsx",
-      "js",
-      "json"
-    ],
-    "unmockedModulePathPatterns": [
-      "react",
-      "<rootDir>/node_modules/react",
-      "<rootDir>/node_modules/babel",
-      "<rootDir>/node_modules/babel-runtime",
-      "<rootDir>/node_modules/classnames"
-    ]
+    "clean": "rimraf lib dist coverage",
+    "lint": "eslint src test examples",
+    "build:lib": "babel src --out-dir lib",
+    "build:umd": "webpack src/index.js dist/react-flexbox-grid.js --config webpack.config.development.js",
+    "build:umd:min": "webpack src/index.js dist/react-flexbox-grid.min.js --config webpack.config.production.js",
+    "build": "npm run build:lib && npm run build:umd && npm run build:umd:min",
+    "test": "mocha --compilers js:babel/register --recursive --require ./test/setup.js",
+    "test:watch": "npm test -- --watch",
+    "test:cov": "babel-node $(npm bin)/isparta cover $(npm bin)/_mocha -- --recursive"
   }
 }

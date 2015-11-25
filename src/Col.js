@@ -18,7 +18,7 @@ export default class Col extends Component {
   }
 
   render() {
-    let classes = [];
+    const classes = [];
 
     if (this.props.className) {
       classes.push(this.props.className);
@@ -28,7 +28,7 @@ export default class Col extends Component {
       classes.push('reverse');
     }
 
-    for (let key in this.props) {
+    for (const key in this.props) {
       if (this.props.hasOwnProperty(key) && this._classMap[key]) {
         classes.push(this._classMap[key] + this.props[key]);
       }
@@ -49,5 +49,7 @@ Col.propTypes = {
   smOffset: PropTypes.number,
   mdOffset: PropTypes.number,
   lgOffset: PropTypes.number,
-  reverse: PropTypes.bool
+  reverse: PropTypes.bool,
+  className: PropTypes.string,
+  children: PropTypes.element
 };

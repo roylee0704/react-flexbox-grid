@@ -1,0 +1,14 @@
+const webpack = require('webpack');
+const baseConfig = require('./webpack.config.base');
+const config = Object.create(baseConfig);
+
+config.plugins = [
+  new webpack.HotModuleReplacementPlugin(),
+  new webpack.NoErrorsPlugin(),
+  new webpack.optimize.OccurenceOrderPlugin(),
+  new webpack.DefinePlugin({
+    'process.env.NODE_ENV': JSON.stringify('development')
+  })
+];
+
+module.exports = config;
