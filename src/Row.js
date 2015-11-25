@@ -41,5 +41,7 @@ Row.propTypes = {
   around: ModificatorType,
   between: ModificatorType,
   first: ModificatorType,
-  last: ModificatorType
+  last: ModificatorType,
+  className: PropTypes.string,
+  children: PropTypes.element
 };
