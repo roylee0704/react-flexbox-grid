@@ -58,7 +58,13 @@
     "react-dom": "^0.14.3",
 
     "classnames": ">=2.1.2",
-    "flexboxgrid": "^6.3.0"
+    "flexboxgrid": "^6.3.0",
+
+    "autoprefixer": "^6.0.3",
+    "css-loader": "^0.21.0",
+    "extract-text-webpack-plugin": "^0.8.2",
+    "style-loader": "^0.12.3",
+    "postcss-loader": "^0.7.0"
   },
   "scripts": {
     "clean": "rimraf lib dist coverage",
