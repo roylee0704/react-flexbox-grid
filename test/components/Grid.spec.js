@@ -2,7 +2,7 @@ import expect from 'expect';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
-import Grid from '../../src/Grid';
+import Grid from '../../src/components/Grid';
 
 describe('Grid', () => {
   it('Should add "container" class', () => {

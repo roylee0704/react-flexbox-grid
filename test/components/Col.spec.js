@@ -2,7 +2,7 @@ import expect from 'expect';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
-import Col from '../../src/Col';
+import Col from '../../src/components/Col';
 
 describe('Col', () => {
   it('Should add classes equals to props', () => {

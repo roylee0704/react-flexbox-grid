@@ -2,7 +2,7 @@ import expect from 'expect';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
-import Row from '../../src/Row';
+import Row from '../../src/components/Row';
 
 describe('Row', () => {
   it('Should add "row" class', () => {
