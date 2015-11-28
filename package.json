@@ -1,6 +1,6 @@
 {
   "name": "react-flexbox-grid",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A set of React components implementing flexboxgrid with the power of CSS Modules",
   "keywords": [
     "browser",
