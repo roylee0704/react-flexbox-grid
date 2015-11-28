@@ -2,3 +2,5 @@ node_modules
 .idea
 .travis.yml
 .gitignore
+.circle.yml
+.wercker.yml
