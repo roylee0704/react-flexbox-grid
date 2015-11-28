@@ -1,5 +1,5 @@
 module.exports = {
-  Grid: require('./Grid'),
-  Row: require('./Row'),
-  Col: require('./Col')
+  Grid: require('./components/Grid'),
+  Row: require('./components/Row'),
+  Col: require('./components/Col')
 };
