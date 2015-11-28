@@ -2,24 +2,25 @@ import expect from 'expect';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
-import Row from '../../src/Row';
+import Row from '../../src/components/Row';
+import style from '../../src/style'
 
 describe('Row', () => {
   it('Should add "row" class', () => {
     const row = TestUtils.renderIntoDocument(<Row />);
-    expect(ReactDOM.findDOMNode(row).className).toEqual('row');
+    expect(ReactDOM.findDOMNode(row).className).toEqual(style['row']);
   });
 
   it('Should add "reverse" class if "reverse" property is true', () => {
     const row = TestUtils.renderIntoDocument(<Row reverse />);
-    expect(ReactDOM.findDOMNode(row).className).toContain('reverse');
+    expect(ReactDOM.findDOMNode(row).className).toContain(style.reverse);
   });
 
   it('Should not replace class', () => {
     const row = TestUtils.renderIntoDocument(<Row className="foo" />);
     const className = ReactDOM.findDOMNode(row).className;
     expect(className).toContain('foo');
-    expect(className).toContain('row');
+    expect(className).toContain(style['row']);
   });
 
   it('Should add modificators', () => {
@@ -39,16 +40,16 @@ describe('Row', () => {
     );
     const className = ReactDOM.findDOMNode(row).className;
 
-    expect(className).toContain('row');
-    expect(className).toContain('start-xs');
-    expect(className).toContain('center-sm');
-    expect(className).toContain('end-md');
-    expect(className).toContain('top-lg');
-    expect(className).toContain('middle-xs');
-    expect(className).toContain('bottom-sm');
-    expect(className).toContain('around-md');
-    expect(className).toContain('between-lg');
-    expect(className).toContain('first-xs');
-    expect(className).toContain('last-sm');
+    expect(className).toContain(style['row']);
+    expect(className).toContain(style['start-xs']);
+    expect(className).toContain(style['center-sm']);
+    expect(className).toContain(style['end-md']);
+    expect(className).toContain(style['top-lg']);
+    expect(className).toContain(style['middle-xs']);
+    expect(className).toContain(style['bottom-sm']);
+    expect(className).toContain(style['around-md']);
+    expect(className).toContain(style['between-lg']);
+    expect(className).toContain(style['first-xs']);
+    expect(className).toContain(style['last-sm']);
   });
 });
