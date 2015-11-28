@@ -1,6 +1,6 @@
 react-flexbox-grid [![Build Status](https://travis-ci.org/roylee0704/react-flexbox-grid.svg)](https://travis-ci.org/roylee0704/react-flexbox-grid) [![npm version](https://badge.fury.io/js/react-flexbox-grid.svg)](https://badge.fury.io/js/react-flexbox-grid)
 ==============
-React Component based on [flexboxgrid](https://goo.gl/imrHBZ)
+A set of React components implementing [flexboxgrid](https://goo.gl/imrHBZ) with the power of CSS Modules. 
 
 It is written in ES6 and requires an ES6 to ES5 transpiler. If there is need for it I can add a transpiled version to the repo.
 
