@@ -1,0 +1,30 @@
+files: [
+  "package.json"
+]
+plugins:
+  prerelease:
+
+    'Lint-ing config files':
+    plugin: 'bumped-finepack'
+
+    'Lint-ing project files':
+    plugin: 'bumped-terminal'
+    command: 'npm run lint'
+
+    'Preparing build':
+    plugin: 'bumped-terminal'
+    command: 'npm run prepublish'
+
+  postrelease:
+
+    'Commit-ing new version'
+    plugin: 'bumped-terminal'
+    command: 'git add package.json && git commit package.json -m "$newVersion release" && git push origin master'
+
+    'Publishing tag at Github'
+    plugin: 'bumped-terminal'
+    command: 'git tag $newversion && git push origin $newVersion'
+
+    'Publishing at NPM'
+    plugin: 'bumped-terminal'
+    command: 'npm publish'
