@@ -1,31 +1,26 @@
 {
   "name": "react-flexbox-grid",
-  "version": "0.3.1",
   "description": "A set of React components implementing flexboxgrid with the power of CSS Modules",
-  "keywords": [
-    "browser",
-    "react",
-    "react-component",
-    "flexbox",
-    "grid",
-    "css",
-    "flexboxgrid"
-  ],
+  "homepage": "https://github.com/roylee0704/react-flexbox-grid",
+  "version": "0.4.0",
+  "main": "lib/index.js",
   "author": "Roy Lee <roylee0704@gmail.com>",
-  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git://github.com/roylee0704/react-flexbox-grid.git"
   },
-  "homepage": "https://github.com/roylee0704/react-flexbox-grid",
   "bugs": {
     "url": "https://github.com/roylee0704/react-flexbox-grid/issues"
   },
-  "main": "lib/index.js",
-  "peerDependencies": {
-    "react": "^0.14.3",
-    "flexboxgrid": "^6.3.0"
-  },
+  "keywords": [
+    "browser",
+    "css",
+    "flexbox",
+    "flexboxgrid",
+    "grid",
+    "react",
+    "react-component"
+  ],
   "devDependencies": {
     "autoprefixer": "^6.0.3",
     "babel": "^5.8.23",
@@ -70,16 +65,21 @@
     "webpack-dev-server": "^1.14.0"
   },
   "scripts": {
+    "babel": "babel ./src --out-dir ./lib",
+    "build": "cross-env NODE_ENV=production npm run babel && npm run sass",
     "clean": "rimraf ./lib",
     "lint": "eslint src test",
-    "babel": "babel ./src --out-dir ./lib",
-    "sass": "cpx './src/**/*.scss' ./lib",
+    "patch": "bumped release patch",
     "prebuild": "npm run clean",
-    "build": "cross-env NODE_ENV=production npm run babel && npm run sass",
     "prepublish": "npm run build",
-    "test": "cross-env NODE_ENV=test karma start",
-    "test:watch": "cross-env NODE_ENV=test karma start --no-single-run",
     "release": "bumped release",
-    "patch": "bumped release patch"
+    "sass": "cpx './src/**/*.scss' ./lib",
+    "test": "cross-env NODE_ENV=test karma start",
+    "test:watch": "cross-env NODE_ENV=test karma start --no-single-run"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "flexboxgrid": "^6.3.0",
+    "react": "^0.14.3"
   }
 }
