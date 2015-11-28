@@ -3,8 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
 import Col from '../../src/components/Col';
-import style from '../../src/style'
-
+import style from '../../src/style';
 
 describe('Col', () => {
   it('Should add classes equals to props', () => {
@@ -18,7 +17,7 @@ describe('Col', () => {
 
   it('Should add "reverse" class if "reverse" property is true', () => {
     const col = TestUtils.renderIntoDocument(<Col reverse/>);
-    expect(ReactDOM.findDOMNode(col).className).toContain(style['reverse']);
+    expect(ReactDOM.findDOMNode(col).className).toContain(style.reverse);
   });
 
   it('Should not replace class', () => {

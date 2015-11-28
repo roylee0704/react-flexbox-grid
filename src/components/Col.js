@@ -26,7 +26,7 @@ export default class Col extends Component {
     }
 
     if (this.props.reverse) {
-      classes.push(style['reverse']);
+      classes.push(style.reverse);
     }
 
     for (const key in this.props) {

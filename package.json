@@ -70,7 +70,7 @@
   },
   "scripts": {
     "clean": "rimraf lib dist coverage",
-    "lint": "eslint src test examples",
+    "lint": "eslint src test",
     "build:lib": "babel src --out-dir lib",
     "build:umd": "webpack src/index.js dist/react-flexbox-grid.js --config webpack.config.development.js",
     "build:umd:min": "webpack src/index.js dist/react-flexbox-grid.min.js --config webpack.config.production.js",

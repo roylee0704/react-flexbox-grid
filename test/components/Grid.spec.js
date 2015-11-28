@@ -9,14 +9,14 @@ import style from '../../src/style';
 describe('Grid', () => {
   it('Should add "container" class', () => {
     const grid = TestUtils.renderIntoDocument(<Grid />);
-    expect(ReactDOM.findDOMNode(grid).className).toEqual(style['container']);
+    expect(ReactDOM.findDOMNode(grid).className).toEqual(style.container);
   });
 
   it('Should not replace class', () => {
     const grid = TestUtils.renderIntoDocument(<Grid className="foo" />);
     const className = ReactDOM.findDOMNode(grid).className;
     expect(className).toContain('foo');
-    expect(className).toContain(style['container']);
+    expect(className).toContain(style.container);
   });
 
   it('Should add "container-fluid" class if "fluid" property is true', () => {

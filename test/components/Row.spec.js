@@ -3,12 +3,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
 import Row from '../../src/components/Row';
-import style from '../../src/style'
+import style from '../../src/style';
 
 describe('Row', () => {
   it('Should add "row" class', () => {
     const row = TestUtils.renderIntoDocument(<Row />);
-    expect(ReactDOM.findDOMNode(row).className).toEqual(style['row']);
+    expect(ReactDOM.findDOMNode(row).className).toEqual(style.row);
   });
 
   it('Should add "reverse" class if "reverse" property is true', () => {
@@ -20,7 +20,7 @@ describe('Row', () => {
     const row = TestUtils.renderIntoDocument(<Row className="foo" />);
     const className = ReactDOM.findDOMNode(row).className;
     expect(className).toContain('foo');
-    expect(className).toContain(style['row']);
+    expect(className).toContain(style.row);
   });
 
   it('Should add modificators', () => {
@@ -40,7 +40,7 @@ describe('Row', () => {
     );
     const className = ReactDOM.findDOMNode(row).className;
 
-    expect(className).toContain(style['row']);
+    expect(className).toContain(style.row);
     expect(className).toContain(style['start-xs']);
     expect(className).toContain(style['center-sm']);
     expect(className).toContain(style['end-md']);

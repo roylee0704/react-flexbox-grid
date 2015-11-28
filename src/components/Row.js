@@ -8,7 +8,7 @@ const modificatorKeys = ['start', 'center', 'end', 'top', 'middle', 'bottom', 'a
 export default class Row extends Component {
 
   render() {
-    const modificators = [style['row']];
+    const modificators = [style.row];
     for (let i = 0; i < modificatorKeys.length; ++i) {
       const key = modificatorKeys[i];
       const value = this.props[key];
