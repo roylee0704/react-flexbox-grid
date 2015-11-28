@@ -1,5 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import classNames from 'classnames';
+import style from '../style';
 
 const ModificatorType = PropTypes.oneOf(['xs', 'sm', 'md', 'lg']);
 const modificatorKeys = ['start', 'center', 'end', 'top', 'middle', 'bottom', 'around', 'between', 'first', 'last'];
@@ -7,17 +8,17 @@ const modificatorKeys = ['start', 'center', 'end', 'top', 'middle', 'bottom', 'a
 export default class Row extends Component {
 
   render() {
-    const modificators = ['row'];
+    const modificators = [style['row']];
     for (let i = 0; i < modificatorKeys.length; ++i) {
       const key = modificatorKeys[i];
       const value = this.props[key];
       if (value) {
-        modificators.push(`${key}-${value}`);
+        modificators.push(style[`${key}-${value}`]);
       }
     }
 
     if (this.props.reverse) {
-      modificators.push('reverse');
+      modificators.push(style.reverse);
     }
 
     const className = classNames(this.props.className, modificators);

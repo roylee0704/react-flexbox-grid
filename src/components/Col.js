@@ -1,4 +1,5 @@
 import React, {Component, PropTypes} from 'react';
+import style from '../style';
 
 export default class Col extends Component {
 
@@ -25,12 +26,12 @@ export default class Col extends Component {
     }
 
     if (this.props.reverse) {
-      classes.push('reverse');
+      classes.push(style['reverse']);
     }
 
     for (const key in this.props) {
       if (this.props.hasOwnProperty(key) && this._classMap[key]) {
-        classes.push(this._classMap[key] + this.props[key]);
+        classes.push(style[this._classMap[key] + this.props[key]]);
       }
     }
 
