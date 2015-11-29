@@ -36,6 +36,7 @@
     "eslint-config-airbnb": "^1.0.0",
     "eslint-plugin-react": "^3.10.0",
     "expect": "^1.13.0",
+    "express": "^4.13.3",
     "extract-text-webpack-plugin": "^0.8.2",
     "flexboxgrid": "^6.3.0",
     "isparta": "^4.0.0",
@@ -62,7 +63,8 @@
     "sass-loader": "^3.1.2",
     "style-loader": "^0.12.3",
     "webpack": "^1.12.9",
-    "webpack-dev-server": "^1.14.0"
+    "webpack-dev-middleware": "^1.4.0",
+    "webpack-hot-middleware": "^2.4.1"
   },
   "scripts": {
     "babel": "babel ./src --out-dir ./lib",
@@ -74,6 +76,7 @@
     "prepublish": "npm run build",
     "release": "bumped release",
     "sass": "cpx './src/**/*.scss' ./lib",
+    "start": "cross-env NODE_ENV=development UV_THREADPOOL_SIZE=100 node ./server",
     "test": "cross-env NODE_ENV=test karma start",
     "test:watch": "cross-env NODE_ENV=test karma start --no-single-run"
   },
