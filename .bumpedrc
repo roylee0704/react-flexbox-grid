@@ -7,26 +7,26 @@ plugins:
   prerelease:
 
     'Linting config files':
-     plugin: 'bumped-finepack'
+      plugin: 'bumped-finepack'
 
     'Lint-ing project files':
-     plugin: 'bumped-terminal'
-     command: 'npm run lint'
+      plugin: 'bumped-terminal'
+      command: 'npm run lint'
 
     'Preparing build':
-     plugin: 'bumped-terminal'
-     command: 'npm run prepublish'
+      plugin: 'bumped-terminal'
+      command: 'npm run prepublish'
 
   postrelease:
 
     'Committing new version':
-     plugin: 'bumped-terminal'
-     command: 'git add package.json && git commit package.json -m "$newVersion release" && git push origin master'
+      plugin: 'bumped-terminal'
+      command: 'git add package.json && git commit package.json -m "$newVersion release" && git push origin master'
 
     'Publishing tag at Github':
-     plugin: 'bumped-terminal'
-     command: 'git tag $newversion && git push origin $newVersion'
+      plugin: 'bumped-terminal'
+      command: 'git tag $newVersion && git push origin $newVersion'
 
     'Publishing at NPM':
-     plugin: 'bumped-terminal'
-     command: 'npm publish'
+      plugin: 'bumped-terminal'
+      command: 'npm publish'
