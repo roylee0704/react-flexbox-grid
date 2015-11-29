@@ -13,13 +13,10 @@
     "url": "https://github.com/roylee0704/react-flexbox-grid/issues"
   },
   "keywords": [
-    "browser",
-    "css",
+    "css modules",
     "flexbox",
-    "flexboxgrid",
     "grid",
-    "react",
-    "react-component"
+    "react"
   ],
   "devDependencies": {
     "autoprefixer": "^6.0.3",
