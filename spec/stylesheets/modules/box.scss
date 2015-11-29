@@ -1,0 +1,16 @@
+.box {
+  position: relative;
+  box-sizing: border-box;
+  min-height: 1rem;
+  margin-bottom: 0;
+  background: #007FFF;
+  border: 1px solid #FFF;
+  border-radius: 2px;
+  overflow: hidden;
+  text-align: center;
+  color: #fff;
+}
+
+.row {
+  composes: box;
+}
