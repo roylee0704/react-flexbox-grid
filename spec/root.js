@@ -11,7 +11,7 @@ const Root = () => (
     <h1>React Flexbox Grid <small>Spec {VERSION}</small></h1>
     <Grid>
       <Row>
-        <Col xs="2">
+        <Col xs="12" sm="8" md="6" lg="4" >
           <div className={box.row} />
         </Col>
       </Row>
