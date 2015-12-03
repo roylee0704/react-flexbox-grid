@@ -2,7 +2,7 @@
   "name": "react-flexbox-grid",
   "description": "A set of React components implementing flexboxgrid with the power of CSS Modules",
   "homepage": "https://github.com/roylee0704/react-flexbox-grid",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "main": "lib/index.js",
   "author": "Roy Lee <roylee0704@gmail.com>",
   "repository": {
@@ -13,6 +13,7 @@
     "url": "https://github.com/roylee0704/react-flexbox-grid/issues"
   },
   "keywords": [
+    "react-component",
     "css modules",
     "flexbox",
     "grid",
