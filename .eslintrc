@@ -2,7 +2,15 @@
   "extends": "airbnb",
   "env": {
     "browser": true,
-    "node": true
+    "node": true,
+    "es6": true
+  },
+  "ecmaFeatures": {
+    "jsx": true,
+    "templateStrings": true,
+    "superInFunctions": false,
+    "classes": true,
+    "modules": true
   },
   "rules": {
     "comma-dangle": 0,
@@ -10,6 +18,7 @@
     "react/jsx-uses-vars": 2,
     "react/react-in-jsx-scope": 2
   },
+  "parser": "babel-eslint",
   "plugins": [
     "react"
   ]
