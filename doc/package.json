@@ -3,6 +3,8 @@
   "version": "0.0.1",
   "description": "Documentation for React Flexbox Grid",
   "scripts": {
+    "start": "cross-env NODE_ENV=development UV_THREADPOOL_SIZE=100 node ./server",
+    "build": "cross-env NODE_ENV=production UV_THREADPOOL_SIZE=100 webpack --config ./webpack.config.production --colors --profile --progress",
     "deploy": "gh-pages -d build"
   },
   "repository": {
@@ -48,7 +50,6 @@
     "redbox-react": "^1.1.1",
     "sass-loader": "^3.0.0",
     "style-loader": "^0.13.0",
-    "toolbox-loader": "0.0.2",
     "transfer-webpack-plugin": "^0.1.4",
     "webpack": "^1.12.0",
     "webpack-dev-middleware": "^1.2.0",

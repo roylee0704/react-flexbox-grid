@@ -7,21 +7,21 @@ const TransferWebpackPlugin = require('transfer-webpack-plugin');
 
 module.exports = {
   context: __dirname,
-  entry: ['./app/index.html'],
+  entry: ['./app/index.jsx'],
   output: {
     path: path.join(__dirname, 'build'),
     filename: 'docs.js'
   },
   resolve: {
-    extensions: ['', '.scss', '.js', '.json', '.md'],
+    extensions: ['', '.jsx', '.scss', '.js', '.json', '.md'],
     alias: {
-      'react-toolbox': path.resolve(__dirname + './../components')
+      'react-flexbox-grid': path.resolve(__dirname + './../src')
     },
     modulesDirectories: [
       'node_modules',
       path.resolve(__dirname, './node_modules'),
       path.resolve(__dirname, './../node_modules'),
-      path.resolve(__dirname, './../components')
+      path.resolve(__dirname, './../src')
     ]
   },
   module: {
@@ -32,11 +32,7 @@ module.exports = {
         loader: 'babel'
       }, {
         test: /(\.scss|\.css)$/,
-        loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss!sass!toolbox')
-      }, {
-        test: /(\.txt)$/,
-        loader: 'raw',
-        include: path.resolve(__dirname, './app/components/layout/main/modules')
+        loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss!sass')
       }, {
         test: /(\.md)$/,
         loader: 'html?removeComments=false!highlight!markdown'
@@ -50,8 +46,8 @@ module.exports = {
       compress: { warnings: false }
     }),
     new HtmlWebpackPlugin({
-        inject: false,
-        template: path.resolve(__dirname, './www/index.html')
+      inject: false,
+      template: path.resolve(__dirname, './www/index.html')
     }),
     new TransferWebpackPlugin([{
       from: 'www/images',
