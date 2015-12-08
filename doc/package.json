@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Documentation for React Flexbox Grid",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -30,6 +30,8 @@
     "babel-plugin-react-transform": "^1.1.1",
     "cross-env": "^1.0.4",
     "css-loader": "^0.21.0",
+    "eslint-config-airbnb": "^1.0.0",
+    "eslint-plugin-react": "^3.10.0",
     "express": "^4.13.3",
     "extract-text-webpack-plugin": "^0.8.2",
     "gh-pages": "^0.5.0",
