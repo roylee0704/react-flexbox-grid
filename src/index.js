@@ -1,5 +1,3 @@
-module.exports = {
-  Grid: require('./components/Grid'),
-  Row: require('./components/Row'),
-  Col: require('./components/Col')
-};
+export Grid from './components/Grid';
+export Row from './components/Row';
+export Col from './components/Col';
