@@ -19,7 +19,7 @@ module.exports = {
   resolve: {
     extensions: ['', '.jsx', '.scss', '.js', '.json', '.md'],
     alias: {
-      'react-toolbox': path.resolve(__dirname + './../src')
+      'react-flexbox-grid': path.resolve(__dirname + './../src')
     },
     modulesDirectories: [
       'node_modules',
@@ -36,7 +36,7 @@ module.exports = {
         loader: 'babel'
       }, {
         test: /(\.scss|\.css)$/,
-        loader: ExtractTextPlugin.extract('style', 'css?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss!sass?sourceMap!toolbox')
+        loader: ExtractTextPlugin.extract('style', 'css?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss!sass?sourceMap')
       }, {
         test: /(\.md)$/,
         loader: 'html!highlight!markdown'
