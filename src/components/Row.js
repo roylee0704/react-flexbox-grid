@@ -44,5 +44,5 @@ Row.propTypes = {
   first: ModificatorType,
   last: ModificatorType,
   className: PropTypes.string,
-  children: PropTypes.element
+  children: PropTypes.node
 };

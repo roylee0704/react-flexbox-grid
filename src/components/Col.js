@@ -52,5 +52,5 @@ Col.propTypes = {
   lgOffset: PropTypes.number,
   reverse: PropTypes.bool,
   className: PropTypes.string,
-  children: PropTypes.element
+  children: PropTypes.node
 };
