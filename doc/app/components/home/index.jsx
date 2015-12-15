@@ -34,10 +34,10 @@ const Home = () => (
         </Col>
       </Row>
       <Row>
-        <Col xs={2} sm={3} md={2} lg={1}>
+        <Col xs={12} sm={3} md={2} lg={1}>
           <div className={style.box} />
         </Col>
-        <Col xs={2} sm={9} md={10} lg={11}>
+        <Col xs={12} sm={9} md={10} lg={11}>
           <div className={style.box} />
         </Col>
       </Row>
