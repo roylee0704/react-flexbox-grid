@@ -4,6 +4,7 @@ react-flexbox-grid [![Build Status](https://travis-ci.org/roylee0704/react-flexb
 
 `React Flexbox Grid` is a set of React components that implement [flexboxgrid.css](https://goo.gl/imrHBZ). It's powered by CSS Modules and harmoniously integrates with your Webpack workflow. You can take a tour through our documentation website and try the components live!
 
+http://roylee0704.github.io/react-flexbox-grid/
 
 Installation
 ------------
