@@ -26,4 +26,13 @@ describe('Col', () => {
     expect(className).toContain('foo');
     expect(className).toContain(style['col-md-3']);
   });
+
+  it('Should support auto-width', () => {
+    const col = TestUtils.renderIntoDocument(<Col xs sm md lg />);
+    const className = ReactDOM.findDOMNode(col).className;
+    expect(className).toContain(style['col-xs']);
+    expect(className).toContain(style['col-sm']);
+    expect(className).toContain(style['col-md']);
+    expect(className).toContain(style['col-lg']);
+  });
 });
