@@ -9,6 +9,7 @@ import Box from '../box';
 import responsiveMD from './responsive';
 import fluidMD from './fluid';
 import offsetMD from './offset';
+import autoWidthMD from './auto-width';
 
 
 const Home = () => (
@@ -79,6 +80,20 @@ const Home = () => (
         </Row>
         <Row>
           <Markdown html = {offsetMD} />
+        </Row>
+      </Section>
+      <Section title = "Auto Width" description = "Add any number of auto sizing columns to a row. Let the grid figure it out.">
+        <Row>
+          <Box xs />
+          <Box xs />
+        </Row>
+        <Row>
+          <Box xs />
+          <Box xs />
+          <Box xs />
+        </Row>
+        <Row>
+          <Markdown html = {autoWidthMD} />
         </Row>
       </Section>
     </Grid>

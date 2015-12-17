@@ -4,8 +4,8 @@ import box from './style';
 
 const Box = (props) => {
   return (
-  <Col {...props}>
-      <div className={box.row} />
+    <Col {...props}>
+        <div className={box.row} />
     </Col>
   );
 };
