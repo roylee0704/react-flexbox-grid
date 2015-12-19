@@ -16,8 +16,26 @@
   margin-bottom: 1rem;
 }
 
+.container {
+  composes: box;
+  box-sizing: border-box;
+  padding: .5em;
+}
+
+.nested {
+  composes: box;
+  background: #036;
+  border-color: #007FFF;
+}
+
 @media only screen and (min-width: 48rem) {
   .row {
+    padding: 1rem;
+  }
+  .container {
+    padding: 1rem;
+  }
+  .nested {
     padding: 1rem;
   }
 }
