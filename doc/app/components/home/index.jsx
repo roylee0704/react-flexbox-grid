@@ -11,6 +11,8 @@ import fluidMD from './fluid';
 import offsetMD from './offset';
 import autoWidthMD from './auto-width';
 import alignStartMD from './align-start';
+import alignCenterMD from './align-center';
+import alignEndMD from './align-end';
 
 
 const Home = () => (
@@ -108,6 +110,28 @@ const Home = () => (
         </Row>
         <Row>
           <Markdown html = {alignStartMD} />
+        </Row>
+        <h3><code>.center-</code></h3>
+        <Row>
+          <Box type="container" xs={12}>
+            <Row center="xs">
+              <Box type="nested" xs={6} />
+            </Row>
+          </Box>
+        </Row>
+        <Row>
+          <Markdown html = {alignCenterMD} />
+        </Row>
+        <h3><code>.end-</code></h3>
+        <Row>
+          <Box type="container" xs={12}>
+            <Row end="xs">
+              <Box type="nested" xs={6} />
+            </Row>
+          </Box>
+        </Row>
+        <Row>
+          <Markdown html = {alignEndMD} />
         </Row>
       </Section>
     </Grid>
