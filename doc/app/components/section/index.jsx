@@ -1,8 +1,9 @@
 import React, {PropTypes} from 'react';
+import style from './style';
 
 const Section = (props) => {
   return (
-    <section>
+    <section className = {style.section}>
       <h2>{props.title}</h2>
       <p>{props.description}</p>
       {props.children}
