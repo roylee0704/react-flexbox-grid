@@ -3,6 +3,7 @@ import {Grid, Row, Col} from 'react-flexbox-grid';
 import home from './style';
 
 import Markdown from '../markdown';
+import Hero from '../hero';
 import Section from '../section';
 import Box from '../box';
 
@@ -19,17 +20,7 @@ import alignBottomMD from './align-bottom';
 
 const Home = () => (
   <article>
-    <header>
-      <Row center="xs">
-        <h1 className={home.headline}>React-FlexBox-Grid</h1>
-      </Row>
-      <Row className={home.desc} center="xs">
-        <Col xs={10}><code>React(CSS-Modules(flexboxgrid.css));</code></Col>
-      </Row>
-      <Row className={home.desc} center="xs">
-        <Col xs={10}><a href="https://github.com/roylee0704/react-flexbox-grid">Github</a></Col>
-      </Row>
-    </header>
+    <Hero />
     <Grid fluid className={home.wrap}>
       <Section
         title="Responsive"

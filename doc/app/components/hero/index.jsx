@@ -2,9 +2,11 @@ import React from 'react';
 import {Row} from 'react-flexbox-grid';
 import style from './style';
 
+import Button from '../button';
+
 const Hero = () => {
   return (
-    <header>
+    <header className={style.hero}>
       <Row center="xs">
         <h1 className={style.headline}>React-FlexBox-Grid</h1>
       </Row>
@@ -12,7 +14,7 @@ const Hero = () => {
         <code>React(CSS-Modules(flexboxgrid.css));</code>
       </Row>
       <Row center="xs">
-        <a href="https://github.com/roylee0704/react-flexbox-grid">Github</a>
+        <Button url="https://github.com/roylee0704/react-flexbox-grid">Github</Button>
       </Row>
     </header>
   );

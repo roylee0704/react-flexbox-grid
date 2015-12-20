@@ -1,29 +1,7 @@
 @import '../_globals';
 
-.headline {
-  font-size: 2.5rem;
-  white-space: nowrap;
-  margin-bottom: 0;
-}
-
 .wrap {
   box-sizing: border-box;
   max-width: 1200px;
   margin: 0 auto;
-}
-
-.desc {
-  margin-top: 2rem;
-  font-size: .95rem;
-}
-
-
-@media only screen and (min-width: 48rem) {
-  .headline {
-    font-size: 4rem;
-    margin-bottom: 2rem;
-  }
-  .desc {
-    font-size: 1.45rem;
-  }
 }
