@@ -13,7 +13,9 @@ import autoWidthMD from './auto-width';
 import alignStartMD from './align-start';
 import alignCenterMD from './align-center';
 import alignEndMD from './align-end';
-
+import alignTopMD from './align-top';
+import alignMiddleMD from './align-middle';
+import alignBottomMD from './align-bottom';
 
 const Home = () => (
   <article>
@@ -125,13 +127,37 @@ const Home = () => (
         <h3><code>.end-</code></h3>
         <Row>
           <Box type="container" xs={12}>
-            <Row end="xs">
+            <Row end="xs" start="md">
               <Box type="nested" xs={6} />
             </Row>
           </Box>
         </Row>
         <Row>
           <Markdown html = {alignEndMD} />
+        </Row>
+        <h3><code>.top-</code></h3>
+        <Row top="xs">
+          <Box type="large" xs={6} />
+          <Box xs={6} />
+        </Row>
+        <Row>
+          <Markdown html = {alignTopMD} />
+        </Row>
+        <h3><code>.middle-</code></h3>
+        <Row middle="xs">
+          <Box type="large" xs={6} />
+          <Box xs={6} />
+        </Row>
+        <Row>
+          <Markdown html = {alignMiddleMD} />
+        </Row>
+        <h3><code>.bottom-</code></h3>
+        <Row bottom="xs">
+          <Box type="large" xs={6} />
+          <Box xs={6} />
+        </Row>
+        <Row>
+          <Markdown html = {alignBottomMD} />
         </Row>
       </Section>
     </Grid>

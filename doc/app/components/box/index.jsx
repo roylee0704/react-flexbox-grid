@@ -5,7 +5,7 @@ import box from './style';
 const Box = (props) => {
   return (
     <Col {...props}>
-        <div className = {box[props.type]}>
+        <div className = {box[props.type || 'box']}>
           {props.children}
         </div>
     </Col>
@@ -13,7 +13,7 @@ const Box = (props) => {
 };
 
 Box.propTypes = {
-  type: PropTypes.oneOf(['row', 'container', 'nested']).isRequired,
+  type: PropTypes.oneOf(['row', 'container', 'nested', 'large']).isRequired,
   children: PropTypes.node
 };
 

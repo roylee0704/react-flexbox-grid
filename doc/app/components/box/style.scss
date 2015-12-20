@@ -28,7 +28,17 @@
   border-color: #007FFF;
 }
 
+.large {
+  composes: box;
+  height: 8rem;
+}
+
 @media only screen and (min-width: 48rem) {
+
+  .box {
+    padding: 1rem;
+  }
+  
   .row {
     padding: 1rem;
   }
@@ -36,6 +46,9 @@
     padding: 1rem;
   }
   .nested {
+    padding: 1rem;
+  }
+  .large {
     padding: 1rem;
   }
 }
