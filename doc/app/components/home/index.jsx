@@ -1,5 +1,5 @@
 import React from 'react';
-import {Grid, Row} from 'react-flexbox-grid';
+import {Grid, Row, Col} from 'react-flexbox-grid';
 import home from './style';
 
 import Markdown from '../markdown';
@@ -23,11 +23,11 @@ const Home = () => (
       <Row center="xs">
         <h1 className={home.headline}>React-FlexBox-Grid</h1>
       </Row>
-      <Row center="xs">
-        <p>A set of React components implementing flexboxgrid with the power of CSS Modules.</p>
+      <Row className={home.desc} center="xs">
+        <Col xs={10}><code>React(CSS-Modules(flexboxgrid.css));</code></Col>
       </Row>
-      <Row center="xs">
-        <a href="https://github.com/roylee0704/react-flexbox-grid">Github</a>
+      <Row className={home.desc} center="xs">
+        <Col xs={10}><a href="https://github.com/roylee0704/react-flexbox-grid">Github</a></Col>
       </Row>
     </header>
     <Grid fluid className={home.wrap}>

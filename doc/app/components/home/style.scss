@@ -12,10 +12,18 @@
   margin: 0 auto;
 }
 
+.desc {
+  margin-top: 2rem;
+  font-size: .95rem;
+}
+
 
 @media only screen and (min-width: 48rem) {
   .headline {
     font-size: 4rem;
     margin-bottom: 2rem;
+  }
+  .desc {
+    font-size: 1.45rem;
   }
 }
