@@ -24,7 +24,7 @@ const Home = () => (
         <h1 className={home.headline}>React-FlexBox-Grid</h1>
       </Row>
       <Row center="xs">
-        <p>A react grid system based on flexboxgrid.css</p>
+        <p>A set of React components implementing flexboxgrid with the power of CSS Modules.</p>
       </Row>
       <Row center="xs">
         <a href="https://github.com/roylee0704/react-flexbox-grid">Github</a>
