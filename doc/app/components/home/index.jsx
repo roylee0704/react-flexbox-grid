@@ -1,5 +1,5 @@
 import React from 'react';
-import {Grid, Row, Col} from 'react-flexbox-grid';
+import {Grid, Row} from 'react-flexbox-grid';
 import home from './style';
 
 import Markdown from '../markdown';
@@ -17,6 +17,8 @@ import alignEndMD from './align-end';
 import alignTopMD from './align-top';
 import alignMiddleMD from './align-middle';
 import alignBottomMD from './align-bottom';
+import distAroundMD from './dist-around';
+import distBetweenMD from './dist-between';
 
 const Home = () => (
   <article>
@@ -149,6 +151,34 @@ const Home = () => (
         </Row>
         <Row>
           <Markdown html = {alignBottomMD} />
+        </Row>
+      </Section>
+      <Section title = "Distribution" description = "Add classes to distribute the contents of a row or column.">
+        <h3><code>.around-</code></h3>
+        <Row>
+          <Box type="container" xs={12}>
+            <Row around="xs">
+              <Box type="nested" xs={2} />
+              <Box type="nested" xs={2} />
+              <Box type="nested" xs={2} />
+            </Row>
+          </Box>
+        </Row>
+        <Row>
+          <Markdown html = {distAroundMD} />
+        </Row>
+        <h3><code>.between-</code></h3>
+        <Row>
+          <Box type="container" xs={12}>
+            <Row between="xs">
+              <Box type="nested" xs={2} />
+              <Box type="nested" xs={2} />
+              <Box type="nested" xs={2} />
+            </Row>
+          </Box>
+        </Row>
+        <Row>
+          <Markdown html = {distBetweenMD} />
         </Row>
       </Section>
     </Grid>
