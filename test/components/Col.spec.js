@@ -12,7 +12,7 @@ describe('Col', () => {
     expect(className).toContain(style['col-xs-12']);
     expect(className).toContain(style['col-sm-8']);
     expect(className).toContain(style['col-md-6']);
-    expect(className).toContain(style['col-lg-145']);
+    expect(className).toContain(style['col-lg-4']);
   });
 
   it('Should add "reverse" class if "reverse" property is true', () => {
