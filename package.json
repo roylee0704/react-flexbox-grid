@@ -68,8 +68,8 @@
     "webpack-hot-middleware": "^2.4.1"
   },
   "scripts": {
-    "babel": "babel ./src --out-dir ./lib",
-    "build": "cross-env NODE_ENV=production npm run babel && npm run sass",
+    "compile": "./node_modules/.bin/babel -d ./lib ./src",
+    "build": "cross-env NODE_ENV=production npm run compile && npm run sass",
     "clean": "rimraf ./lib",
     "lint": "eslint src test",
     "patch": "bumped release patch",
