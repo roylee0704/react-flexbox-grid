@@ -32,7 +32,6 @@
     "babel-preset-react-hmre": "^1.0.1",
     "babel-preset-stage-0": "^6.3.13",
     "classnames": ">=2.1.2",
-    "cpx": "^1.2.1",
     "cross-env": "^1.0.4",
     "css-loader": "^0.21.0",
     "eslint": "^1.10.1",
