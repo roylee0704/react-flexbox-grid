@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
 import Grid from '../../src/components/Grid';
-import style from '../../src/style';
+import style from 'flexboxgrid';
 
 
 describe('Grid', () => {

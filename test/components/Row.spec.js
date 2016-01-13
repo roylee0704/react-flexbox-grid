@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
 import Row from '../../src/components/Row';
-import style from '../../src/style';
+import style from 'flexboxgrid';
 
 describe('Row', () => {
   it('Should add "row" class', () => {
