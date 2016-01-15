@@ -23,11 +23,9 @@ export default class Row extends Component {
 
     const className = classNames(this.props.className, modificators);
 
-    return (
-      <div {...this.props} className={className}>
-        {this.props.children}
-      </div>
-    );
+    return React.createElement(this.props.tagName || 'div', Object.assign({}, this.props, {
+      className
+    }), this.props.children);
   }
 }
 
@@ -44,5 +42,6 @@ Row.propTypes = {
   first: ModificatorType,
   last: ModificatorType,
   className: PropTypes.string,
+  tagName: PropTypes.string,
   children: PropTypes.node
 };

@@ -35,4 +35,11 @@ describe('Col', () => {
     expect(className).toContain(style['col-md']);
     expect(className).toContain(style['col-lg']);
   });
+
+  it('Should support custom tag name', () => {
+    const col = TestUtils.renderIntoDocument(<Col xs sm md lg tagName="li" />);
+    const { tagName } = ReactDOM.findDOMNode(col);
+
+    expect(tagName).toBe('LI');
+  });
 });

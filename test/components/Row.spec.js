@@ -52,4 +52,11 @@ describe('Row', () => {
     expect(className).toContain(style['first-xs']);
     expect(className).toContain(style['last-sm']);
   });
+
+  it('Should support custom tag name', () => {
+    const col = TestUtils.renderIntoDocument(<Row tagName="ul" />);
+    const { tagName } = ReactDOM.findDOMNode(col);
+
+    expect(tagName).toBe('UL');
+  });
 });

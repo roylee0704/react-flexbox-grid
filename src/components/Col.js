@@ -39,7 +39,7 @@ export default class Col extends Component {
       }
     }
 
-    return React.createElement('div', Object.assign({}, this.props, {
+    return React.createElement(this.props.tagName || 'div', Object.assign({}, this.props, {
       className: classes.join(' ')
     }), this.props.children);
   }
@@ -56,5 +56,6 @@ Col.propTypes = {
   lgOffset: PropTypes.number,
   reverse: PropTypes.bool,
   className: PropTypes.string,
+  tagName: PropTypes.string,
   children: PropTypes.node
 };
