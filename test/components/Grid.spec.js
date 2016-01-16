@@ -23,4 +23,11 @@ describe('Grid', () => {
     const grid = TestUtils.renderIntoDocument(<Grid fluid />);
     expect(ReactDOM.findDOMNode(grid).className).toEqual(style['container-fluid']);
   });
+
+  it('Should support custom tag name', () => {
+    const col = TestUtils.renderIntoDocument(<Grid tagName="section" />);
+    const { tagName } = ReactDOM.findDOMNode(col);
+
+    expect(tagName).toBe('SECTION');
+  });
 });
