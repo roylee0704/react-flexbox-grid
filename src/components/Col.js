@@ -1,5 +1,5 @@
 import React, {Component, PropTypes} from 'react';
-import style from '../style';
+import style from 'flexboxgrid';
 
 const ModificatorType = PropTypes.oneOfType([PropTypes.number, PropTypes.bool]);
 
