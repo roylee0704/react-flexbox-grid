@@ -18,6 +18,11 @@ React Toolbox can be installed as an [npm package](https://www.npmjs.com/package
 npm install react-flexbox-grid
 ```
 
+Example
+-------
+Looking for example to use `react-flexbox-grid`? Head over to [react-flexbox-grid-example](https://github.com/roylee0704/react-flexbox-grid-example) and by following 3 simple instructions, the example page will be up and running at your machine :)
+
+
 Usage
 -----
 
@@ -56,12 +61,6 @@ const App = React.createClass({
   }
 });
 ```
-
-Example
--------
-Looking for example to use `react-flexbox-grid`? Head over to [react-flexbox-grid-example](https://github.com/roylee0704/react-flexbox-grid-example) and by following 3 simple instructions, the example page will be running at your machine :)
-
-
 
 License
 -------
