@@ -38,9 +38,9 @@ The previous code creates a React container component based on `React Flexbox Gr
 
 I encourage you to work with webpack but if you want to use `React Flexbox Grid` in an old fashioned way, you must generate a build with all the css and javascript and include it in your `index.html`. Then you can use the components exposed in the `window` object.
 
-More example
-------------
 
+Code snippets
+------------
 ```jsx
 const {Grid, Row, Col} = require('react-flexbox-grid');
 
@@ -56,6 +56,12 @@ const App = React.createClass({
   }
 });
 ```
+
+Example
+-------
+Looking for example to use `react-flexbox-grid`? Head over to [react-flexbox-grid-example](https://github.com/roylee0704/react-flexbox-grid-example) and by following 3 simple instructions, the example page will be running at your machine :)
+
+
 
 License
 -------
