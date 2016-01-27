@@ -9,6 +9,19 @@ React-Flexbox-Grid is a set of React components that implement [flexboxgrid.css]
 
 http://roylee0704.github.io/react-flexbox-grid/
 
+
+Usage
+-----
+
+Although there are other ways to use React Toolbox, the recommended way is to create a Webpack workflow with [Babel Loader](https://github.com/babel/babel-loader), [CSS Loader](https://github.com/webpack/css-loader) and [SASS Loader](https://github.com/jtangelder/sass-loader). A good starting point is [React Hot Webpack Boilerplate](https://github.com/gaearon/react-hot-boilerplate)
+
+[react-flexbox-grid-example](https://github.com/roylee0704/react-flexbox-grid-example)
+
+Example
+-------
+Looking for example to use `react-flexbox-grid`? Head over to [react-flexbox-grid-example](https://github.com/roylee0704/react-flexbox-grid-example) and by following 3 simple instructions, the example page will be up and running at your machine :)
+
+
 Installation
 ------------
 
@@ -17,16 +30,6 @@ React Toolbox can be installed as an [npm package](https://www.npmjs.com/package
 ```
 npm install react-flexbox-grid
 ```
-
-Example
--------
-Looking for example to use `react-flexbox-grid`? Head over to [react-flexbox-grid-example](https://github.com/roylee0704/react-flexbox-grid-example) and by following 3 simple instructions, the example page will be up and running at your machine :)
-
-
-Usage
------
-
-Although there are other ways to use React Toolbox, the recommended way is to create a Webpack workflow with [Babel Loader](https://github.com/babel/babel-loader), [CSS Loader](https://github.com/webpack/css-loader) and [SASS Loader](https://github.com/jtangelder/sass-loader). A good starting point is [React Hot Webpack Boilerplate](https://github.com/gaearon/react-hot-boilerplate)
 
 
 Once you have the workflow ready, you can just require and use the components:
