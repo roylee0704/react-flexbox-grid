@@ -19,6 +19,12 @@
     "grid",
     "react"
   ],
+  "peerDependencies": {
+    "babel-polyfill": ">=6.0.0",
+    "classnames": ">=2.1.2",
+    "flexboxgrid": "^6.3.0",
+    "react": "^0.14.3"
+  },
   "devDependencies": {
     "autoprefixer": "^6.0.3",
     "babel-cli": "^6.4.0",
@@ -31,7 +37,6 @@
     "babel-preset-react": "^6.3.13",
     "babel-preset-react-hmre": "^1.0.1",
     "babel-preset-stage-0": "^6.3.13",
-    "classnames": ">=2.1.2",
     "cpx": "^1.2.1",
     "cross-env": "^1.0.4",
     "css-loader": "^0.21.0",
@@ -81,10 +86,5 @@
     "test": "cross-env NODE_ENV=test karma start",
     "test:watch": "cross-env NODE_ENV=test karma start --no-single-run"
   },
-  "license": "MIT",
-  "peerDependencies": {
-    "flexboxgrid": "^6.3.0",
-    "babel-polyfill": ">=6.0.0",
-    "react": "^0.14.3"
-  }
+  "license": "MIT"
 }
