@@ -120,7 +120,7 @@ const Home = () => (
         <h3><code>.end-</code></h3>
         <Row>
           <Box type="container" xs={12}>
-            <Row end="xs" start="md">
+            <Row end="xs">
               <Box type="nested" xs={6} />
             </Row>
           </Box>
