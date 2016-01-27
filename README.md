@@ -64,6 +64,12 @@ const App = React.createClass({
   }
 });
 ```
+Contributors
+-----------
+- [roylee0704](https://github.com/roylee0704/)
+- [Helder Santana](https://github.com/heldr/)
+- [Ankit](https://github.com/ankitduseja/) 
+
 
 License
 -------
