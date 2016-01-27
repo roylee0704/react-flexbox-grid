@@ -66,10 +66,9 @@ const App = React.createClass({
 ```
 Contributors
 -----------
-- [roylee0704](https://github.com/roylee0704/)
-- [Helder Santana](https://github.com/heldr/)
-- [Ankit](https://github.com/ankitduseja/) 
-
+[![Roy Lee](https://avatars0.githubusercontent.com/u/3850661?v=3&s=144)](https://github.com/roylee0704/) | [![Helder Santana](https://avatars1.githubusercontent.com/u/134727?v=3&s=144)](https://github.com/heldr/) | [![Ankit](https://avatars0.githubusercontent.com/u/1939352?v=3&s=144)](https://github.com/ankitduseja/)
+---|---|---
+[Roy Lee](https://github.com/roylee0704) | [Helder Santana](https://github.com/heldr/) | [Ankit](https://github.com/ankitduseja/)
 
 License
 -------
