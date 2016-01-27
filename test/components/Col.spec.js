@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
 import Col from '../../src/components/Col';
-import style from '../../src/style';
+import style from 'flexboxgrid';
 
 describe('Col', () => {
   it('Should add classes equals to props', () => {
