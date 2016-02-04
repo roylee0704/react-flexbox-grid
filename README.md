@@ -36,9 +36,9 @@ Once you have the workflow ready, you can just require and use the components:
 
 ```jsx
 import React from `react`;
-import {Container} from `react-flexbox-grid/lib/index`;
+import {Grid} from `react-flexbox-grid/lib/index`;
 
-React.render(<Container />, document.querySelector('#main'));
+React.render(<Grid />, document.querySelector('#main'));
 ```
 
 The previous code creates a React container component based on `React Flexbox Grid` container. It's important to notice that requiring a module from the exposed root of the package will import the **SASS** of the component.
