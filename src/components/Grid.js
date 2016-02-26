@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import classNames from 'classnames';
-import style from '../style.scss';
+import style from '../style';
 
 export default class Grid extends Component {
   render() {
