@@ -17,6 +17,29 @@ Although there are other ways to use React Toolbox, the recommended way is to cr
 
 [react-flexbox-grid-example](https://github.com/roylee0704/react-flexbox-grid-example)
 
+### Basic webpack configuration
+
+You probably don't want to load all dependencies with the CSS Modules feature, so you can add this very targeted piece of configuration as a webpack loader:
+
+```js
+{
+  test: /\.scss$/,
+  loaders: ['style', 'css?modules', 'sass'],
+  include: path.resolve(__dirname, './node_modules/react-flexbox-grid'),
+}
+```
+
+But make sure your other CSS loaders don't pick it up. If, for example, there is a loader which includes all SCSS files in `node_modules`, you can exclude this module by using `exclude`:
+
+```js
+{
+  test: /\.scss$/,
+  loaders: ['style', 'css?foo=bar', 'sass?config&anotherConfig'],
+  include: path.resolve(__dirname, './node_modules'),
+  exclude: path.resolve(__dirname, './node_modules/react-flexbox-grid'),
+}
+```
+
 Example
 -------
 Looking for example to use `react-flexbox-grid`? Head over to [react-flexbox-grid-example](https://github.com/roylee0704/react-flexbox-grid-example) and by following 3 simple instructions, the example page will be up and running at your machine :)
