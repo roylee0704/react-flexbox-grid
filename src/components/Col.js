@@ -1,5 +1,5 @@
 import React, {Component, PropTypes} from 'react';
-import style from '../style.scss';
+import style from '../style';
 
 const ModificatorType = PropTypes.oneOfType([PropTypes.number, PropTypes.bool]);
 
