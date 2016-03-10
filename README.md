@@ -54,6 +54,10 @@ Installation
 React Toolbox can be installed as an [npm package](https://www.npmjs.com/package/react-flexbox-grid);
 
 ```
+//dependencies
+npm install classnames 
+npm install flexboxgrid
+
 npm install react-flexbox-grid
 ```
 
