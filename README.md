@@ -42,7 +42,7 @@ But make sure your other CSS loaders don't pick it up. If, for example, there is
 
 Example
 -------
-Looking for example to use `react-flexbox-grid`? Head over to [react-flexbox-grid-example](https://github.com/roylee0704/react-flexbox-grid-example) and by following 3 simple instructions, the example page will be up and running at your machine :)
+Looking for example to use `react-flexbox-grid`? Head over to [react-flexbox-grid-example](https://github.com/roylee0704/react-flexbox-grid-example).
 
 
 Installation
