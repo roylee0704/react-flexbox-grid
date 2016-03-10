@@ -21,7 +21,7 @@ Although there are other ways to use React Toolbox, the recommended way is to cr
 
 You probably don't want to load all dependencies with the CSS Modules feature, so you can add this very targeted piece of configuration as a webpack loader:
 
-Note: To prevent [empty class error](https://github.com/roylee0704/react-flexbox-grid/issues/21). It is important to append '?modules' to css-loader.
+Note: To prevent [Empty ClassName Issue](https://github.com/roylee0704/react-flexbox-grid/issues/21). It is important to append '?modules' to css-loader.
 
 ```js
 {
