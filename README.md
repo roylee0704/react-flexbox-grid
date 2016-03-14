@@ -19,27 +19,24 @@ Although there are other ways to use React Toolbox, the recommended way is to cr
 
 ### Basic webpack configuration
 
-You probably don't want to load all dependencies with the CSS Modules feature, so you can add this very targeted piece of configuration as a webpack loader:
-
-Note: To prevent [Empty ClassName Issue](https://github.com/roylee0704/react-flexbox-grid/issues/21). It is important to append '?modules' to css-loader.
+You should configure webpack to load flexboxgrid with [CSS Modules](https://github.com/webpack/css-loader#css-modules), otherwise components from react-flexbox-grid will just have [empty class names](https://github.com/roylee0704/react-flexbox-grid/issues/21):
 
 ```js
 {
-  test: /\.scss$/,
-  loaders: ['style', 'css?modules', 'sass'],
-  include: path.resolve(__dirname, './node_modules/react-flexbox-grid'),
+  test: /\.css$/,
+  loader: 'style!css?modules',
+  include: /flexboxgrid/,
 }
 ```
 
-
-But make sure your other CSS loaders don't pick it up. If, for example, there is a loader which includes all SCSS files in `node_modules`, you can exclude this module by using `exclude`:
+If you have other loaders which affect `flexboxgrid`, make sure to exclude it:
 
 ```js
 {
-  test: /\.scss$/,
-  loaders: ['style', 'css?foo=bar', 'sass?config&anotherConfig'],
-  include: path.resolve(__dirname, './node_modules'),
-  exclude: path.resolve(__dirname, './node_modules/react-flexbox-grid'),
+  test: /\.css$/,
+  loader: 'style!css!postcss',
+  include: path.join(__dirname, 'node_modules'), // this also includes flexboxgrid
+  exclude: /flexboxgrid/, // so we are excluding it
 }
 ```
 
