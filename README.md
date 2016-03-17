@@ -29,7 +29,7 @@ You should configure webpack to load flexboxgrid with [CSS Modules](https://gith
 }
 ```
 
-If you have other loaders which affect `flexboxgrid`, make sure to exclude it:
+If you have another loader which affects `flexboxgrid`, exclude it from that loader:
 
 ```js
 {
@@ -39,6 +39,8 @@ If you have other loaders which affect `flexboxgrid`, make sure to exclude it:
   exclude: /flexboxgrid/, // so we are excluding it
 }
 ```
+
+Because webpack stacks loaders together, it doesn't override them.
 
 Example
 -------
