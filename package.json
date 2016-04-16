@@ -2,9 +2,12 @@
   "name": "react-flexbox-grid",
   "description": "A set of React components implementing flexboxgrid with the power of CSS Modules",
   "homepage": "https://github.com/roylee0704/react-flexbox-grid",
-  "version": "0.9.5",
+  "version": "0.9.6",
   "main": "lib/index.js",
-  "author": "Roy Lee <roylee0704@gmail.com>",
+  "author": {
+    "name": "Roy Lee",
+    "email": "roylee0704@gmail.com"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/roylee0704/react-flexbox-grid.git"
@@ -13,18 +16,12 @@
     "url": "https://github.com/roylee0704/react-flexbox-grid/issues"
   },
   "keywords": [
-    "react-component",
     "css modules",
     "flexbox",
     "grid",
-    "react"
+    "react",
+    "react-component"
   ],
-  "peerDependencies": {
-    "babel-polyfill": ">=6.0.0",
-    "classnames": ">=2.1.2",
-    "flexboxgrid": "^6.3.0",
-    "react": "^0.14.3 || ^15.0.0"
-  },
   "devDependencies": {
     "autoprefixer": "^6.0.3",
     "babel-cli": "^6.4.0",
@@ -74,9 +71,9 @@
     "webpack-hot-middleware": "^2.4.1"
   },
   "scripts": {
-    "compile": "./node_modules/.bin/babel -d ./lib ./src",
     "build": "cross-env NODE_ENV=production npm run compile",
     "clean": "rimraf ./lib",
+    "compile": "./node_modules/.bin/babel -d ./lib ./src",
     "lint": "eslint src test",
     "patch": "bumped release patch",
     "prebuild": "npm run clean",
@@ -86,5 +83,11 @@
     "test": "cross-env NODE_ENV=test karma start",
     "test:watch": "cross-env NODE_ENV=test karma start --no-single-run"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "peerDependencies": {
+    "babel-polyfill": ">=6.0.0",
+    "classnames": ">=2.1.2",
+    "flexboxgrid": "^6.3.0",
+    "react": "^0.14.3 || ^15.0.0"
+  }
 }
