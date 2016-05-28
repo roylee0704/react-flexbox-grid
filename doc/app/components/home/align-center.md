@@ -5,5 +5,5 @@
       <Col xs={6} />
     </Row>
   </Col>
-<Row>
+</Row>
 ```
