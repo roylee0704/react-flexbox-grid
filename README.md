@@ -50,7 +50,7 @@ Looking for example to use `react-flexbox-grid`? Head over to [react-flexbox-gri
 Installation
 ------------
 
-React Toolbox can be installed as an [npm package](https://www.npmjs.com/package/react-flexbox-grid);
+React-Flexbox-Grid can be installed as an [npm package](https://www.npmjs.com/package/react-flexbox-grid);
 
 ```
 //dependencies
