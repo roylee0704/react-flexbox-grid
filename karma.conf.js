@@ -8,7 +8,8 @@ module.exports = function karmaConfig(config) {
     files: [
       './node_modules/phantomjs-polyfill/bind-polyfill.js',
       './node_modules/babel-polyfill/browser.js',
-      'tests.webpack.js'
+      'tests.webpack.js',
+      'test/reactErrors.js'
     ],
     reporters: ['dots'],
     preprocessors: {'tests.webpack.js': ['webpack']},
