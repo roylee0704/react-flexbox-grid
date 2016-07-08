@@ -1,30 +1,31 @@
 import expect from 'expect';
 import React from 'react';
-import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
 import Row from '../../src/components/Row';
 import style from 'flexboxgrid';
 
+const renderer = TestUtils.createRenderer();
+
 describe('Row', () => {
   it('Should add "row" class', () => {
-    const row = TestUtils.renderIntoDocument(<Row />);
-    expect(ReactDOM.findDOMNode(row).className).toEqual(style.row);
+    renderer.render(<Row />);
+    expect(renderer.getRenderOutput().props.className).toEqual(style.row);
   });
 
   it('Should add "reverse" class if "reverse" property is true', () => {
-    const row = TestUtils.renderIntoDocument(<Row reverse />);
-    expect(ReactDOM.findDOMNode(row).className).toContain(style.reverse);
+    renderer.render(<Row reverse />);
+    expect(renderer.getRenderOutput().props.className).toContain(style.reverse);
   });
 
   it('Should not replace class', () => {
-    const row = TestUtils.renderIntoDocument(<Row className="foo" />);
-    const className = ReactDOM.findDOMNode(row).className;
+    renderer.render(<Row className="foo" />);
+    const { className } = renderer.getRenderOutput().props;
     expect(className).toContain('foo');
     expect(className).toContain(style.row);
   });
 
   it('Should add modificators', () => {
-    const row = TestUtils.renderIntoDocument(
+    renderer.render(
       <Row
         start="xs"
         center="sm"
@@ -38,7 +39,7 @@ describe('Row', () => {
         last="sm"
       />
     );
-    const className = ReactDOM.findDOMNode(row).className;
+    const { className } = renderer.getRenderOutput().props;
 
     expect(className).toContain(style.row);
     expect(className).toContain(style['start-xs']);
@@ -54,9 +55,7 @@ describe('Row', () => {
   });
 
   it('Should support custom tag name', () => {
-    const col = TestUtils.renderIntoDocument(<Row tagName="ul" />);
-    const { tagName } = ReactDOM.findDOMNode(col);
-
-    expect(tagName).toBe('UL');
+    renderer.render(<Row tagName="ul" />);
+    expect(renderer.getRenderOutput().type).toBe('ul');
   });
 });
