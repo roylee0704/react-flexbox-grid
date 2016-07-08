@@ -1,7 +1,25 @@
 import React, {Component, PropTypes} from 'react';
+import cleanProps from '../cleanProps';
 import style from 'flexboxgrid';
 
 const ModificatorType = PropTypes.oneOfType([PropTypes.number, PropTypes.bool]);
+
+const propTypes = {
+  xs: ModificatorType,
+  sm: ModificatorType,
+  md: ModificatorType,
+  lg: ModificatorType,
+  xsOffset: PropTypes.number,
+  smOffset: PropTypes.number,
+  mdOffset: PropTypes.number,
+  lgOffset: PropTypes.number,
+  reverse: PropTypes.bool,
+  className: PropTypes.string,
+  tagName: PropTypes.string,
+  children: PropTypes.node
+};
+
+const propKeys = Object.keys(propTypes);
 
 export default class Col extends Component {
 
@@ -39,23 +57,12 @@ export default class Col extends Component {
       }
     }
 
-    return React.createElement(this.props.tagName || 'div', Object.assign({}, this.props, {
-      className: classes.join(' ')
-    }), this.props.children);
+    const className = classes.join(' ');
+
+    const newProps = Object.assign({}, cleanProps(propKeys, this.props), { className });
+
+    return React.createElement(this.props.tagName || 'div', newProps, this.props.children);
   }
 }
 
-Col.propTypes = {
-  xs: ModificatorType,
-  sm: ModificatorType,
-  md: ModificatorType,
-  lg: ModificatorType,
-  xsOffset: PropTypes.number,
-  smOffset: PropTypes.number,
-  mdOffset: PropTypes.number,
-  lgOffset: PropTypes.number,
-  reverse: PropTypes.bool,
-  className: PropTypes.string,
-  tagName: PropTypes.string,
-  children: PropTypes.node
-};
+Col.propTypes = propTypes;
