@@ -35,8 +35,8 @@ If you have another loader which affects `flexboxgrid`, exclude it from that loa
 {
   test: /\.css$/,
   loader: 'style!css!postcss',
-  include: path.join(__dirname, 'node_modules'), // this also includes flexboxgrid
-  exclude: /flexboxgrid/, // so we are excluding it
+  include: path.join(__dirname, 'node_modules'), // oops, this also includes flexboxgrid
+  exclude: /flexboxgrid/, // so we have to exclude it
 }
 ```
 
