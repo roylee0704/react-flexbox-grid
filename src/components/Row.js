@@ -1,6 +1,6 @@
-import React, {Component, PropTypes} from 'react';
+import React, { PropTypes } from 'react';
 import classNames from 'classnames';
-import cleanProps from '../cleanProps';
+import createProps from '../createProps';
 import style from 'flexboxgrid';
 
 const ModificatorType = PropTypes.oneOf(['xs', 'sm', 'md', 'lg']);
@@ -23,30 +23,26 @@ const propTypes = {
   children: PropTypes.node
 };
 
-const propKeys = Object.keys(propTypes);
+function getClassNames(props) {
+  const modificators = [style.row];
 
-export default class Row extends Component {
-
-  render() {
-    const modificators = [style.row];
-    for (let i = 0; i < modificatorKeys.length; ++i) {
-      const key = modificatorKeys[i];
-      const value = this.props[key];
-      if (value) {
-        modificators.push(style[`${key}-${value}`]);
-      }
+  for (let i = 0; i < modificatorKeys.length; ++i) {
+    const key = modificatorKeys[i];
+    const value = props[key];
+    if (value) {
+      modificators.push(style[`${key}-${value}`]);
     }
-
-    if (this.props.reverse) {
-      modificators.push(style.reverse);
-    }
-
-    const className = classNames(this.props.className, modificators);
-
-    const newProps = Object.assign({}, cleanProps(propKeys, this.props), { className });
-
-    return React.createElement(this.props.tagName || 'div', newProps, this.props.children);
   }
+
+  if (props.reverse) {
+    modificators.push(style.reverse);
+  }
+
+  return classNames(props.className, modificators);
+}
+
+export default function Row(props) {
+  return React.createElement(props.tagName || 'div', createProps(propTypes, props, getClassNames(props)));
 }
 
 Row.propTypes = propTypes;
