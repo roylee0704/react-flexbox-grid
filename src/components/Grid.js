@@ -1,6 +1,6 @@
-import React, {Component, PropTypes} from 'react';
+import React, { PropTypes } from 'react';
 import classNames from 'classnames';
-import cleanProps from '../cleanProps';
+import createProps from '../createProps';
 import style from 'flexboxgrid';
 
 const propTypes = {
@@ -10,17 +10,11 @@ const propTypes = {
   children: PropTypes.node
 };
 
-const propKeys = Object.keys(propTypes);
+export default function Grid(props) {
+  const containerClass = style[props.fluid ? 'container-fluid' : 'container'];
+  const className = classNames(props.className, containerClass);
 
-export default class Grid extends Component {
-  render() {
-    const containerClass = style[this.props.fluid ? 'container-fluid' : 'container'];
-    const className = classNames(this.props.className, containerClass);
-
-    const newProps = Object.assign({}, cleanProps(propKeys, this.props), { className });
-
-    return React.createElement(this.props.tagName || 'div', newProps, this.props.children);
-  }
+  return React.createElement(props.tagName || 'div', createProps(propTypes, props, className));
 }
 
 Grid.propTypes = propTypes;

@@ -1,5 +1,5 @@
-import React, {Component, PropTypes} from 'react';
-import cleanProps from '../cleanProps';
+import React, { PropTypes } from 'react';
+import createProps from '../createProps';
 import style from 'flexboxgrid';
 
 const ModificatorType = PropTypes.oneOfType([PropTypes.number, PropTypes.bool]);
@@ -19,50 +19,39 @@ const propTypes = {
   children: PropTypes.node
 };
 
-const propKeys = Object.keys(propTypes);
+const classMap = {
+  xs: 'col-xs',
+  sm: 'col-sm',
+  md: 'col-md',
+  lg: 'col-lg',
+  xsOffset: 'col-xs-offset',
+  smOffset: 'col-sm-offset',
+  mdOffset: 'col-md-offset',
+  lgOffset: 'col-lg-offset'
+};
 
-export default class Col extends Component {
+function getClassNames(props) {
+  const extraClasses = [];
 
-  constructor(props) {
-    super(props);
-
-    this._classMap = {
-      xs: 'col-xs',
-      sm: 'col-sm',
-      md: 'col-md',
-      lg: 'col-lg',
-      xsOffset: 'col-xs-offset',
-      smOffset: 'col-sm-offset',
-      mdOffset: 'col-md-offset',
-      lgOffset: 'col-lg-offset'
-    };
+  if (props.className) {
+    extraClasses.push(props.className);
   }
 
-  render() {
-    const classes = [];
-
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
-
-    if (this.props.reverse) {
-      classes.push(style.reverse);
-    }
-
-    for (const key in this.props) {
-      if (this.props.hasOwnProperty(key) && this._classMap[key]) {
-        let colBaseClass = this._classMap[key];
-        colBaseClass = Number.isInteger(this.props[key]) ? (colBaseClass + '-' + this.props[key]) : colBaseClass;
-        classes.push(style[colBaseClass]);
-      }
-    }
-
-    const className = classes.join(' ');
-
-    const newProps = Object.assign({}, cleanProps(propKeys, this.props), { className });
-
-    return React.createElement(this.props.tagName || 'div', newProps, this.props.children);
+  if (props.reverse) {
+    extraClasses.push(style.reverse);
   }
+
+  return Object.keys(props)
+    .filter(key => classMap[key])
+    .map(key => style[Number.isInteger(props[key]) ? (classMap[key] + '-' + props[key]) : classMap[key]])
+    .concat(extraClasses)
+    .join(' ');
+}
+
+export default function Col(props) {
+  const className = getClassNames(props);
+
+  return React.createElement(props.tagName || 'div', createProps(propTypes, props, className));
 }
 
 Col.propTypes = propTypes;
