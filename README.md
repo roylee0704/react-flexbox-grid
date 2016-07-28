@@ -54,7 +54,7 @@ React-Flexbox-Grid can be installed as an [npm package](https://www.npmjs.com/pa
 
 ```
 //dependencies
-npm install classnames 
+npm install classnames
 npm install flexboxgrid
 
 npm install react-flexbox-grid
@@ -95,9 +95,10 @@ const App = React.createClass({
 ```
 Contributors
 -----------
-[![Roy Lee](https://avatars0.githubusercontent.com/u/3850661?v=3&s=144)](https://github.com/roylee0704/) | [![Helder Santana](https://avatars1.githubusercontent.com/u/134727?v=3&s=144)](https://github.com/heldr/) | [![Ankit](https://avatars0.githubusercontent.com/u/1939352?v=3&s=144)](https://github.com/ankitduseja/)
+[![Roy Lee](https://avatars0.githubusercontent.com/u/3850661?v=3&s=144)](https://github.com/roylee0704/) | [![Helder Santana](https://avatars1.githubusercontent.com/u/134727?v=3&s=144)](https://github.com/heldr/) | [![Matija Marohnić](https://avatars2.githubusercontent.com/u/471278?v=3&s=144)](https://github.com/silvenon)
 ---|---|---
-[Roy Lee](https://github.com/roylee0704) | [Helder Santana](https://github.com/heldr/) | [Ankit](https://github.com/ankitduseja/)
+[Roy Lee](https://github.com/roylee0704) | [Helder Santana](https://github.com/heldr/) |
+[Matija Marohnić](https://github.com/silvenon)
 
 License
 -------
