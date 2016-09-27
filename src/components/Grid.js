@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import classNames from 'classnames';
+import classNames from '../combineIfExist';
 import createProps from '../createProps';
 import style from 'flexboxgrid';
 
