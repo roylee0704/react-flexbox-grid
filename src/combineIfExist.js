@@ -1,9 +1,7 @@
 export default function(a, b) {
   function reduceToString(arg) {
     if (Array.isArray(arg)) {
-      return arg.reduce(function reduxor(acc, cur) {
-        return acc + ' ' + cur;
-      });
+      return arg.join(' ');
     }
     return arg || '';
   }
