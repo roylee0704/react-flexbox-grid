@@ -1,8 +1,7 @@
+import style from 'flexboxgrid';
 import React, { PropTypes } from 'react';
 import createProps from '../createProps';
-import style from 'flexboxgrid';
-
-const ColumnSizeType = PropTypes.oneOfType([PropTypes.number, PropTypes.bool]);
+import { ColumnSizeType } from '../types';
 
 const propTypes = {
   xs: ColumnSizeType,

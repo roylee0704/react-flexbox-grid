@@ -1,9 +1,9 @@
-import React, { PropTypes } from 'react';
 import classNames from 'classnames';
-import createProps from '../createProps';
 import style from 'flexboxgrid';
+import React, { PropTypes } from 'react';
+import createProps from '../createProps';
+import { ViewportSizeType } from '../types';
 
-const ViewportSizeType = PropTypes.oneOf(['xs', 'sm', 'md', 'lg']);
 const rowKeys = ['start', 'center', 'end', 'top', 'middle', 'bottom', 'around', 'between', 'first', 'last'];
 
 const propTypes = {
