@@ -35,8 +35,6 @@ describe('Row', () => {
         bottom="sm"
         around="md"
         between="lg"
-        first="xs"
-        last="sm"
       />
     );
     const { className } = renderer.getRenderOutput().props;
@@ -50,8 +48,6 @@ describe('Row', () => {
     expect(className).toContain(style['bottom-sm']);
     expect(className).toContain(style['around-md']);
     expect(className).toContain(style['between-lg']);
-    expect(className).toContain(style['first-xs']);
-    expect(className).toContain(style['last-sm']);
   });
 
   it('Should support custom tag name', () => {

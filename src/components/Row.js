@@ -4,7 +4,7 @@ import React, { PropTypes } from 'react';
 import createProps from '../createProps';
 import { ViewportSizeType } from '../types';
 
-const rowKeys = ['start', 'center', 'end', 'top', 'middle', 'bottom', 'around', 'between', 'first', 'last'];
+const rowKeys = ['start', 'center', 'end', 'top', 'middle', 'bottom', 'around', 'between'];
 
 const propTypes = {
   reverse: PropTypes.bool,
@@ -16,8 +16,6 @@ const propTypes = {
   bottom: ViewportSizeType,
   around: ViewportSizeType,
   between: ViewportSizeType,
-  first: ViewportSizeType,
-  last: ViewportSizeType,
   className: PropTypes.string,
   tagName: PropTypes.string,
   children: PropTypes.node
