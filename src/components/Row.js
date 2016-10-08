@@ -4,7 +4,7 @@ import createProps from '../createProps';
 import style from 'flexboxgrid';
 
 const ViewportSizeType = PropTypes.oneOf(['xs', 'sm', 'md', 'lg']);
-const modificatorKeys = ['start', 'center', 'end', 'top', 'middle', 'bottom', 'around', 'between', 'first', 'last'];
+const rowKeys = ['start', 'center', 'end', 'top', 'middle', 'bottom', 'around', 'between', 'first', 'last'];
 
 const propTypes = {
   reverse: PropTypes.bool,
@@ -26,8 +26,8 @@ const propTypes = {
 function getClassNames(props) {
   const modificators = [style.row];
 
-  for (let i = 0; i < modificatorKeys.length; ++i) {
-    const key = modificatorKeys[i];
+  for (let i = 0; i < rowKeys.length; ++i) {
+    const key = rowKeys[i];
     const value = props[key];
     if (value) {
       modificators.push(style[`${key}-${value}`]);
