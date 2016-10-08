@@ -3,21 +3,21 @@ import classNames from 'classnames';
 import createProps from '../createProps';
 import style from 'flexboxgrid';
 
-const ModificatorType = PropTypes.oneOf(['xs', 'sm', 'md', 'lg']);
+const ViewportSizeType = PropTypes.oneOf(['xs', 'sm', 'md', 'lg']);
 const modificatorKeys = ['start', 'center', 'end', 'top', 'middle', 'bottom', 'around', 'between', 'first', 'last'];
 
 const propTypes = {
   reverse: PropTypes.bool,
-  start: ModificatorType,
-  center: ModificatorType,
-  end: ModificatorType,
-  top: ModificatorType,
-  middle: ModificatorType,
-  bottom: ModificatorType,
-  around: ModificatorType,
-  between: ModificatorType,
-  first: ModificatorType,
-  last: ModificatorType,
+  start: ViewportSizeType,
+  center: ViewportSizeType,
+  end: ViewportSizeType,
+  top: ViewportSizeType,
+  middle: ViewportSizeType,
+  bottom: ViewportSizeType,
+  around: ViewportSizeType,
+  between: ViewportSizeType,
+  first: ViewportSizeType,
+  last: ViewportSizeType,
   className: PropTypes.string,
   tagName: PropTypes.string,
   children: PropTypes.node

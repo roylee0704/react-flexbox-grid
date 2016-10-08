@@ -2,13 +2,13 @@ import React, { PropTypes } from 'react';
 import createProps from '../createProps';
 import style from 'flexboxgrid';
 
-const ModificatorType = PropTypes.oneOfType([PropTypes.number, PropTypes.bool]);
+const ColumnSizeType = PropTypes.oneOfType([PropTypes.number, PropTypes.bool]);
 
 const propTypes = {
-  xs: ModificatorType,
-  sm: ModificatorType,
-  md: ModificatorType,
-  lg: ModificatorType,
+  xs: ColumnSizeType,
+  sm: ColumnSizeType,
+  md: ColumnSizeType,
+  lg: ColumnSizeType,
   xsOffset: PropTypes.number,
   smOffset: PropTypes.number,
   mdOffset: PropTypes.number,
