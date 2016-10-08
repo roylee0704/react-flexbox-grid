@@ -53,8 +53,7 @@ Installation
 React-Flexbox-Grid can be installed as an [npm package](https://www.npmjs.com/package/react-flexbox-grid);
 
 ```
-//dependencies
-npm install classnames
+// peer dependency
 npm install flexboxgrid
 
 npm install react-flexbox-grid
@@ -65,7 +64,7 @@ Once you have the workflow ready, you can just require and use the components:
 
 ```jsx
 import React from `react`;
-import { Grid } from `react-flexbox-grid/lib/index`;
+import { Grid } from `react-flexbox-grid`;
 
 React.render(<Grid />, document.querySelector('#main'));
 ```
