@@ -55,7 +55,6 @@
     "mocha": "^2.3.4",
     "node-sass": "^3.4.2",
     "phantomjs": "^1.9.19",
-    "phantomjs-polyfill": "0.0.1",
     "postcss-loader": "^0.7.0",
     "react": "^15.2.0",
     "react-addons-test-utils": "^15.2.0",

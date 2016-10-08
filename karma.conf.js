@@ -6,7 +6,6 @@ module.exports = function karmaConfig(config) {
     singleRun: true,
     frameworks: ['mocha'],
     files: [
-      './node_modules/phantomjs-polyfill/bind-polyfill.js',
       './node_modules/babel-polyfill/browser.js',
       'tests.webpack.js',
       'test/reactErrors.js'
