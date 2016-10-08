@@ -30,6 +30,10 @@ const classMap = {
   lgOffset: 'col-lg-offset'
 };
 
+function isInteger(value) {
+  return typeof value === 'number' && isFinite(value) && Math.floor(value) === value;
+}
+
 function getClassNames(props) {
   const extraClasses = [];
 
@@ -43,7 +47,7 @@ function getClassNames(props) {
 
   return Object.keys(props)
     .filter(key => classMap[key])
-    .map(key => style[Number.isInteger(props[key]) ? (classMap[key] + '-' + props[key]) : classMap[key]])
+    .map(key => style[isInteger(props[key]) ? (classMap[key] + '-' + props[key]) : classMap[key]])
     .concat(extraClasses);
 }
 
