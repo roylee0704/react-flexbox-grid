@@ -19,7 +19,15 @@ Although there are other ways to use React-Flexbox-Grid, the recommended way is 
 
 ### Basic webpack configuration
 
-You should configure webpack to load flexboxgrid with [CSS Modules](https://github.com/webpack/css-loader#css-modules), otherwise components from react-flexbox-grid will just have [empty class names](https://github.com/roylee0704/react-flexbox-grid/issues/21):
+You must configure webpack to load flexboxgrid with [CSS Modules](https://github.com/webpack/css-loader#css-modules), otherwise components from react-flexbox-grid will just have [empty class names](https://github.com/roylee0704/react-flexbox-grid/issues/21).
+
+To do so, first add the loaders required as `devDependencies`:
+
+```
+npm i -D npm style-loader css-loader
+```
+
+Then configure the loaders:
 
 ```js
 {
@@ -29,7 +37,7 @@ You should configure webpack to load flexboxgrid with [CSS Modules](https://gith
 }
 ```
 
-If you have another loader which affects `flexboxgrid`, exclude it from that loader:
+If you have another loader which affects `flexboxgrid`, exclude it from that loader. In this case, also using `postcss` loader:
 
 ```js
 {
@@ -42,6 +50,8 @@ If you have another loader which affects `flexboxgrid`, exclude it from that loa
 
 Because webpack stacks loaders together, it doesn't override them.
 
+**Note:** If you need isomorphic support see https://github.com/roylee0704/react-flexbox-grid/issues/28#issuecomment-198758253.
+
 Example
 -------
 Looking for example to use `react-flexbox-grid`? Head over to [react-flexbox-grid-example](https://github.com/roylee0704/react-flexbox-grid-example).
@@ -50,24 +60,25 @@ Looking for example to use `react-flexbox-grid`? Head over to [react-flexbox-gri
 Installation
 ------------
 
-React-Flexbox-Grid can be installed as an [npm package](https://www.npmjs.com/package/react-flexbox-grid);
+React-Flexbox-Grid can be installed as an [npm package](https://www.npmjs.com/package/react-flexbox-grid):
 
 ```
-//dependencies
-npm install classnames
-npm install flexboxgrid
-
-npm install react-flexbox-grid
+npm i -S react-flexbox-grid
 ```
 
+It has peer dependency requirements on `classnames` and `flexboxgrid` modules, which can be installed and added to the package manifest like so:
+
+```
+npm i -S classnames flexboxgrid
+```
 
 Once you have the workflow ready, you can just require and use the components:
 
 ```jsx
-import React from `react`;
-import { Grid } from `react-flexbox-grid/lib/index`;
+import React from 'react'
+import { Grid } from 'react-flexbox-grid/lib/index'
 
-React.render(<Grid />, document.querySelector('#main'));
+React.render(<Grid />, document.querySelector('#main'))
 ```
 
 The previous code creates a React container component based on `React Flexbox Grid` container. It's important to notice that requiring a module from the exposed root of the package will import the **SASS** of the component.
