@@ -27,7 +27,8 @@ module.exports = {
         loader: 'babel'
       },
       {
-        test: /(\.scss|\.css)$/,
+        test: /(\.scss)$/,
+        exclude: path.join(__dirname, 'src'),
         loader: ExtractTextPlugin.extract('style-loader', 'css?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss!sass?sourceMap')
       }
     ]

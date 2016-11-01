@@ -21,7 +21,7 @@ app.get('*', (req, resp) => {
   resp.sendFile(path.join(__dirname, './spec/index.html'));
 });
 
-app.listen(port, '0.0.0.0', (err) => {
+app.listen(port, 'localhost', (err) => {
   if (err) {
     console.log(err);
     return;
@@ -29,5 +29,5 @@ app.listen(port, '0.0.0.0', (err) => {
 
   console.log(path.join(__dirname, './spec/index.html'));
 
-  console.log('Listening at http://0.0.0.0:' + port);
+  console.log('Listening at http://localhost:' + port);
 });
