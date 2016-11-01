@@ -5,7 +5,7 @@
 
 import {Component} from 'react';
 
-declare module "react-flexbox-grid" {
+declare namespace __ReactFlexboxGrid {
   type RowPropsModificatorType = 'xs' | 'sm' | 'md' | 'lg';
   type ColPropsModificatorType = number | boolean;
 
@@ -57,3 +57,5 @@ declare module "react-flexbox-grid" {
 
   }
 }
+
+export = __ReactFlexboxGrid;
