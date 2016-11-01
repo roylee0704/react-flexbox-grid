@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import classNames from 'classnames';
 import createProps from '../createProps';
-import style from 'flexboxgrid';
+import style from 'style!css?modules!flexboxgrid';
 
 const ModificatorType = PropTypes.oneOf(['xs', 'sm', 'md', 'lg']);
 const modificatorKeys = ['start', 'center', 'end', 'top', 'middle', 'bottom', 'around', 'between', 'first', 'last'];
