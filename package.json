@@ -84,7 +84,9 @@
     "test:watch": "cross-env NODE_ENV=test karma start --no-single-run"
   },
   "license": "MIT",
+  "types": "react-flexbox-grid.d.ts",
   "peerDependencies": {
+    "@types/react": "*",
     "babel-polyfill": ">=6.0.0",
     "classnames": ">=2.1.2",
     "flexboxgrid": "^6.3.0",
