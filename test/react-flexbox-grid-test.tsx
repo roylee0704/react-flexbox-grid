@@ -59,3 +59,13 @@ const ex5: JSX.Element = (
     </Col>
   </Row>
 );
+
+const ex6: JSX.Element = (
+  <Row>
+    <Col xs={12} last="md">
+      <Row start="xs">
+        <Col xs={6} first={"xs"}/>
+      </Row>
+    </Col>
+  </Row>
+);

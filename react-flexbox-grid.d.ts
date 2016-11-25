@@ -6,7 +6,7 @@
 import {Component} from 'react';
 
 declare namespace __ReactFlexboxGrid {
-  type RowPropsModificatorType = 'xs' | 'sm' | 'md' | 'lg';
+  type SizePropsModificatorType = 'xs' | 'sm' | 'md' | 'lg';
   type ColPropsModificatorType = number | boolean;
 
   export interface GridProps {
@@ -17,16 +17,14 @@ declare namespace __ReactFlexboxGrid {
 
   export interface RowProps {
     readonly reverse?: boolean,
-    readonly start?: RowPropsModificatorType,
-    readonly center?: RowPropsModificatorType,
-    readonly end?: RowPropsModificatorType,
-    readonly top?: RowPropsModificatorType,
-    readonly middle?: RowPropsModificatorType,
-    readonly bottom?: RowPropsModificatorType,
-    readonly around?: RowPropsModificatorType,
-    readonly between?: RowPropsModificatorType,
-    readonly first?: RowPropsModificatorType,
-    readonly last?: RowPropsModificatorType,
+    readonly start?: SizePropsModificatorType,
+    readonly center?: SizePropsModificatorType,
+    readonly end?: SizePropsModificatorType,
+    readonly top?: SizePropsModificatorType,
+    readonly middle?: SizePropsModificatorType,
+    readonly bottom?: SizePropsModificatorType,
+    readonly around?: SizePropsModificatorType,
+    readonly between?: SizePropsModificatorType,
     readonly className?: string,
     readonly tagName?: string,
   }
@@ -40,6 +38,8 @@ declare namespace __ReactFlexboxGrid {
     readonly smOffset?: number,
     readonly mdOffset?: number,
     readonly lgOffset?: number,
+    readonly first?: SizePropsModificatorType,
+    readonly last?: SizePropsModificatorType,
     readonly reverse?: boolean,
     readonly className?: string,
     readonly tagName?: string,
