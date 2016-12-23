@@ -20,7 +20,7 @@ const propTypes = {
 };
 
 const classMap = {
-  xs: 'col-xs',
+  xs: 'col-xs', //col-xs-2  // col-xs
   sm: 'col-sm',
   md: 'col-md',
   lg: 'col-lg',
@@ -28,6 +28,13 @@ const classMap = {
   smOffset: 'col-sm-offset',
   mdOffset: 'col-md-offset',
   lgOffset: 'col-lg-offset'
+};
+
+const hiddenMap = {
+  xs: 'hidden-xs',
+  sm: 'hidden-sm',
+  md: 'hidden-md',
+  lg: 'hidden-lg',
 };
 
 function getClassNames(props) {
@@ -43,7 +50,14 @@ function getClassNames(props) {
 
   return Object.keys(props)
     .filter(key => classMap[key])
-    .map(key => style[Number.isInteger(props[key]) ? (classMap[key] + '-' + props[key]) : classMap[key]])
+    .map(key => {
+      if ( Number.isInteger(props[key] ) && props[key] === 0 ) {
+        return style[hiddenMap[key]];
+      } else if ( Number.isInteger(props[key]) ) {
+        return style[`${classMap[key]}-${props[key]}`];
+      }
+      return style[classMap[key]];
+    })
     .concat(extraClasses)
     .join(' ');
 }

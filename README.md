@@ -1,3 +1,14 @@
+# fork: falieson/react-flexbox-grid
+this is a fork from react-flexbox-grid which adds the ability to responsively hide columns using 0 as the column size: `<Col xs={0}>`
+
+1. `$ cd yourApp`
+1. `$ atom package.json`
+
+```
+"react-flexbox-grid": "git@github.com:falieson/react-flexbox-grid.git#responsive_hidden",
+```
+
+
 # react-flexbox-grid
 [![npm version](https://badge.fury.io/js/react-flexbox-grid.svg)](https://badge.fury.io/js/react-flexbox-grid)
 [![Build Status](https://travis-ci.org/roylee0704/react-flexbox-grid.svg)](https://travis-ci.org/roylee0704/react-flexbox-grid)
