@@ -8,6 +8,7 @@ import Section from '../section';
 import Box from '../box';
 
 import responsiveMD from './responsive';
+import responsiveHideMD from './responsiveHide';
 import fluidMD from './fluid';
 import offsetMD from './offset';
 import autoWidthMD from './auto-width';
@@ -42,6 +43,25 @@ const Home = () => (
         </Row>
         <Row>
           <Markdown html = {responsiveMD} />
+        </Row>
+      </Section>
+      <Section title = "Hidden" description = "Set column size option to 0 to hide the contents of a column">
+        <h3><code>Medium and Large Only</code></h3>
+        <Row>
+          <Box type="row" xs={0} sm={0} md={2} lg={9} />
+          <Box type="row" xs={0} sm={0} md={2} lg={1} />
+          <Box type="row" xs={0} sm={0} md={4} lg={1} />
+          <Box type="row" xs={0} sm={0} md={4} lg={1} />
+        </Row>
+        <h3><code>XS and Small Only</code></h3>
+        <Row>
+          <Box type="row" xs={2} sm={1} md={0} lg={0} />
+          <Box type="row" xs={4} sm={1} md={0} lg={0} />
+          <Box type="row" xs={4} sm={9} md={0} lg={0} />
+          <Box type="row" xs={2} sm={1} md={0} lg={0} />
+        </Row>
+        <Row>
+          <Markdown html = {responsiveHideMD} />
         </Row>
       </Section>
       <Section title = "Fluid" description = "Percent based width allow fluid resizing of columns and rows.">
