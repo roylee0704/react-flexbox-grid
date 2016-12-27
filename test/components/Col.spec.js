@@ -17,6 +17,17 @@ describe('Col', () => {
     expect(className).toContain(style['col-lg-4']);
   });
 
+  it('Should hide elements when cols is 0', () => {
+    renderer.render(<Col xs={0} sm={0} md={0} lg={0} />);
+    const { type, props: { className } } = renderer.getRenderOutput();
+    expect(type).toBe('div');
+    expect(className).toContain('hidden-xs');
+    expect(className).toContain('hidden-sm');
+    expect(className).toContain('hidden-md');
+    expect(className).toContain('hidden-lg');
+  });
+
+
   it('Should add "reverse" class if "reverse" property is true', () => {
     renderer.render(<Col reverse/>);
     expect(renderer.getRenderOutput().props.className).toContain(style.reverse);
