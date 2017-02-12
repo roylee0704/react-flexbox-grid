@@ -75,8 +75,8 @@ npm i -S classnames flexboxgrid
 Once you have the workflow ready, you can just require and use the components:
 
 ```jsx
-import React from `react`;
-import { Grid } from `react-flexbox-grid`;
+import React from 'react';
+import { Grid } from 'react-flexbox-grid';
 
 React.render(<Grid />, document.querySelector('#main'))
 ```
