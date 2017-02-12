@@ -30,6 +30,10 @@ const classMap = {
   lgOffset: 'col-lg-offset'
 };
 
+function isInteger(value) {
+  return typeof value === 'number' && isFinite(value) && Math.floor(value) === value;
+}
+
 function getClassNames(props) {
   const extraClasses = [];
 
@@ -43,15 +47,14 @@ function getClassNames(props) {
 
   return Object.keys(props)
     .filter(key => classMap[key])
-    .map(key => style[Number.isInteger(props[key]) ? (classMap[key] + '-' + props[key]) : classMap[key]])
-    .concat(extraClasses)
-    .join(' ');
+    .map(key => style[isInteger(props[key]) ? (classMap[key] + '-' + props[key]) : classMap[key]])
+    .concat(extraClasses);
 }
 
 export default function Col(props) {
-  const className = getClassNames(props);
+  const classNames = getClassNames(props);
 
-  return React.createElement(props.tagName || 'div', createProps(propTypes, props, className));
+  return React.createElement(props.tagName || 'div', createProps(propTypes, props, classNames));
 }
 
 Col.propTypes = propTypes;

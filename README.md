@@ -60,10 +60,10 @@ Looking for example to use `react-flexbox-grid`? Head over to [react-flexbox-gri
 Installation
 ------------
 
-React-Flexbox-Grid can be installed as an [npm package](https://www.npmjs.com/package/react-flexbox-grid):
+React-Flexbox-Grid can be installed as an [npm package](https://www.npmjs.com/package/react-flexbox-grid), along with its peer dependency `flexboxgrid`:
 
 ```
-npm i -S react-flexbox-grid
+npm i -S react-flexbox-grid flexboxgrid
 ```
 
 It has peer dependency requirements on `classnames` and `flexboxgrid` modules, which can be installed and added to the package manifest like so:
@@ -75,8 +75,8 @@ npm i -S classnames flexboxgrid
 Once you have the workflow ready, you can just require and use the components:
 
 ```jsx
-import React from 'react'
-import { Grid } from 'react-flexbox-grid/lib/index'
+import React from `react`;
+import { Grid } from `react-flexbox-grid`;
 
 React.render(<Grid />, document.querySelector('#main'))
 ```
