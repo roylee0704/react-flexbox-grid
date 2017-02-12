@@ -18,7 +18,7 @@ describe('Col', () => {
   });
 
   it('Should add "first-*" class if "first" property is set', () => {
-    renderer.render(<Col first='md'/>);
+    renderer.render(<Col first="md"/>);
     expect(renderer.getRenderOutput().props.className).toContain(style['first-md']);
   });
 
