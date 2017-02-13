@@ -1,4 +1,3 @@
-import classNames from 'classnames';
 import style from 'flexboxgrid';
 import React, { PropTypes } from 'react';
 import createProps from '../createProps';
@@ -22,7 +21,7 @@ const propTypes = {
 };
 
 function getClassNames(props) {
-  const modificators = [style.row];
+  const modificators = [props.className, style.row];
 
   for (let i = 0; i < rowKeys.length; ++i) {
     const key = rowKeys[i];
@@ -36,7 +35,7 @@ function getClassNames(props) {
     modificators.push(style.reverse);
   }
 
-  return classNames(props.className, modificators);
+  return modificators;
 }
 
 export default function Row(props) {
