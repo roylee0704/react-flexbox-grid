@@ -6,8 +6,8 @@
 import {Component} from 'react';
 
 declare namespace __ReactFlexboxGrid {
-  type SizePropsModificatorType = 'xs' | 'sm' | 'md' | 'lg';
-  type ColPropsModificatorType = number | boolean;
+  type ViewportSizeType = 'xs' | 'sm' | 'md' | 'lg';
+  type ColumnSizeType = number | boolean;
 
   export interface GridProps {
     readonly fluid?: boolean,
@@ -17,29 +17,29 @@ declare namespace __ReactFlexboxGrid {
 
   export interface RowProps {
     readonly reverse?: boolean,
-    readonly start?: SizePropsModificatorType,
-    readonly center?: SizePropsModificatorType,
-    readonly end?: SizePropsModificatorType,
-    readonly top?: SizePropsModificatorType,
-    readonly middle?: SizePropsModificatorType,
-    readonly bottom?: SizePropsModificatorType,
-    readonly around?: SizePropsModificatorType,
-    readonly between?: SizePropsModificatorType,
+    readonly start?: ViewportSizeType,
+    readonly center?: ViewportSizeType,
+    readonly end?: ViewportSizeType,
+    readonly top?: ViewportSizeType,
+    readonly middle?: ViewportSizeType,
+    readonly bottom?: ViewportSizeType,
+    readonly around?: ViewportSizeType,
+    readonly between?: ViewportSizeType,
     readonly className?: string,
     readonly tagName?: string,
   }
 
   export interface ColProps {
-    readonly xs?: ColPropsModificatorType,
-    readonly sm?: ColPropsModificatorType,
-    readonly md?: ColPropsModificatorType,
-    readonly lg?: ColPropsModificatorType,
+    readonly xs?: ColumnSizeType,
+    readonly sm?: ColumnSizeType,
+    readonly md?: ColumnSizeType,
+    readonly lg?: ColumnSizeType,
     readonly xsOffset?: number,
     readonly smOffset?: number,
     readonly mdOffset?: number,
     readonly lgOffset?: number,
-    readonly first?: SizePropsModificatorType,
-    readonly last?: SizePropsModificatorType,
+    readonly first?: ViewportSizeType,
+    readonly last?: ViewportSizeType,
     readonly reverse?: boolean,
     readonly className?: string,
     readonly tagName?: string,
