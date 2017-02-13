@@ -17,6 +17,11 @@ describe('Col', () => {
     expect(className).toContain(style['col-lg-4']);
   });
 
+  it('Should add "first-*" class if "first" property is set', () => {
+    renderer.render(<Col first="md"/>);
+    expect(renderer.getRenderOutput().props.className).toContain(style['first-md']);
+  });
+
   it('Should add "reverse" class if "reverse" property is true', () => {
     renderer.render(<Col reverse/>);
     expect(renderer.getRenderOutput().props.className).toContain(style.reverse);

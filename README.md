@@ -4,7 +4,7 @@
 [![NPM Status](http://img.shields.io/npm/dm/react-flexbox-grid.svg?style=flat-square)](https://www.npmjs.org/package/react-flexbox-grid)
 
 
-React-Flexbox-Grid is a set of React components that implement [flexboxgrid.css](https://goo.gl/imrHBZ). It's built on top of some the trendiest proposals like CSS Modules (written in SASS), Webpack and ES6. The library harmoniously integrates with your Webpack workflow and it's easily customizable and very flexible.
+React-Flexbox-Grid is a set of React components that implement [flexboxgrid.css](https://goo.gl/imrHBZ). It's built on top of some of the trendiest proposals like CSS Modules (written in SASS), Webpack and ES6. The library harmoniously integrates with your Webpack workflow and it's easily customizable and very flexible.
 
 
 http://roylee0704.github.io/react-flexbox-grid/
@@ -60,10 +60,10 @@ Looking for example to use `react-flexbox-grid`? Head over to [react-flexbox-gri
 Installation
 ------------
 
-React-Flexbox-Grid can be installed as an [npm package](https://www.npmjs.com/package/react-flexbox-grid):
+React-Flexbox-Grid can be installed as an [npm package](https://www.npmjs.com/package/react-flexbox-grid), along with its peer dependency `flexboxgrid`:
 
 ```
-npm i -S react-flexbox-grid
+npm i -S react-flexbox-grid flexboxgrid
 ```
 
 It has peer dependency requirements on `classnames` and `flexboxgrid` modules, which can be installed and added to the package manifest like so:
@@ -75,8 +75,8 @@ npm i -S classnames flexboxgrid
 Once you have the workflow ready, you can just require and use the components:
 
 ```jsx
-import React from 'react'
-import { Grid } from 'react-flexbox-grid/lib/index'
+import React from 'react';
+import { Grid } from 'react-flexbox-grid';
 
 React.render(<Grid />, document.querySelector('#main'))
 ```

@@ -1,18 +1,19 @@
+import style from 'flexboxgrid';
 import React, { PropTypes } from 'react';
 import createProps from '../createProps';
-import style from 'flexboxgrid';
-
-const ModificatorType = PropTypes.oneOfType([PropTypes.number, PropTypes.bool]);
+import { ColumnSizeType, ViewportSizeType } from '../types';
 
 const propTypes = {
-  xs: ModificatorType,
-  sm: ModificatorType,
-  md: ModificatorType,
-  lg: ModificatorType,
+  xs: ColumnSizeType,
+  sm: ColumnSizeType,
+  md: ColumnSizeType,
+  lg: ColumnSizeType,
   xsOffset: PropTypes.number,
   smOffset: PropTypes.number,
   mdOffset: PropTypes.number,
   lgOffset: PropTypes.number,
+  first: ViewportSizeType,
+  last: ViewportSizeType,
   reverse: PropTypes.bool,
   className: PropTypes.string,
   tagName: PropTypes.string,
@@ -30,11 +31,23 @@ const classMap = {
   lgOffset: 'col-lg-offset'
 };
 
+function isInteger(value) {
+  return typeof value === 'number' && isFinite(value) && Math.floor(value) === value;
+}
+
 function getClassNames(props) {
   const extraClasses = [];
 
   if (props.className) {
     extraClasses.push(props.className);
+  }
+
+  if (props.first) {
+    extraClasses.push(style['first-' + props.first]);
+  }
+
+  if (props.last) {
+    extraClasses.push(style['last-' + props.last]);
   }
 
   if (props.reverse) {
@@ -43,15 +56,14 @@ function getClassNames(props) {
 
   return Object.keys(props)
     .filter(key => classMap[key])
-    .map(key => style[Number.isInteger(props[key]) ? (classMap[key] + '-' + props[key]) : classMap[key]])
-    .concat(extraClasses)
-    .join(' ');
+    .map(key => style[isInteger(props[key]) ? (classMap[key] + '-' + props[key]) : classMap[key]])
+    .concat(extraClasses);
 }
 
 export default function Col(props) {
-  const className = getClassNames(props);
+  const classNames = getClassNames(props);
 
-  return React.createElement(props.tagName || 'div', createProps(propTypes, props, className));
+  return React.createElement(props.tagName || 'div', createProps(propTypes, props, classNames));
 }
 
 Col.propTypes = propTypes;
