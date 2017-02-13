@@ -82,7 +82,9 @@
     "test:watch": "cross-env NODE_ENV=test karma start --no-single-run"
   },
   "license": "MIT",
+  "types": "react-flexbox-grid.d.ts",
   "peerDependencies": {
+    "@types/react": "*",
     "flexboxgrid": "^6.3.0",
     "react": "^0.14.3 || ^15.0.0"
   }
