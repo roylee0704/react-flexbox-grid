@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import createProps from '../createProps';
-import style from 'flexboxgrid';
+import getClass from '../classNames';
 
 const propTypes = {
   fluid: PropTypes.bool,
@@ -10,7 +10,7 @@ const propTypes = {
 };
 
 export default function Grid(props) {
-  const containerClass = style[props.fluid ? 'container-fluid' : 'container'];
+  const containerClass = getClass(props.fluid ? 'container-fluid' : 'container');
   const classNames = [props.className, containerClass];
 
   return React.createElement(props.tagName || 'div', createProps(propTypes, props, classNames));
