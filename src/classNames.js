@@ -1,7 +1,7 @@
 import style from 'flexboxgrid';
 
 function defaultClassNameLookup(className) {
-  return style[className];
+  return style[className] || className;
 }
 
 let classNameLookup = defaultClassNameLookup;
