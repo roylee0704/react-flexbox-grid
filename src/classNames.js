@@ -1,15 +1,5 @@
-import style from 'flexboxgrid';
-
-function defaultClassNameLookup(className) {
-  return style[className] || className;
-}
-
-let classNameLookup = defaultClassNameLookup;
-
-export function setClassNameLookup(fn) {
-  classNameLookup = fn || defaultClassNameLookup;
-}
+import styles from 'flexboxgrid';
 
 export default function getClass(className) {
-  return classNameLookup(className);
+  return (styles && styles[className]) ? styles[className] : className;
 }
