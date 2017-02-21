@@ -1,4 +1,4 @@
-import style from 'flexboxgrid';
+import getClass from '../classNames';
 import React, { PropTypes } from 'react';
 import createProps from '../createProps';
 import { ViewportSizeType } from '../types';
@@ -21,18 +21,18 @@ const propTypes = {
 };
 
 function getClassNames(props) {
-  const modificators = [props.className, style.row];
+  const modificators = [props.className, getClass('row')];
 
   for (let i = 0; i < rowKeys.length; ++i) {
     const key = rowKeys[i];
     const value = props[key];
     if (value) {
-      modificators.push(style[`${key}-${value}`]);
+      modificators.push(getClass(`${key}-${value}`));
     }
   }
 
   if (props.reverse) {
-    modificators.push(style.reverse);
+    modificators.push(getClass('reverse'));
   }
 
   return modificators;

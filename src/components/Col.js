@@ -1,6 +1,6 @@
-import style from 'flexboxgrid';
 import React, { PropTypes } from 'react';
 import createProps from '../createProps';
+import getClass from '../classNames';
 import { ColumnSizeType, ViewportSizeType } from '../types';
 
 const propTypes = {
@@ -43,20 +43,20 @@ function getClassNames(props) {
   }
 
   if (props.first) {
-    extraClasses.push(style['first-' + props.first]);
+    extraClasses.push(getClass('first-' + props.first));
   }
 
   if (props.last) {
-    extraClasses.push(style['last-' + props.last]);
+    extraClasses.push(getClass('last-' + props.last));
   }
 
   if (props.reverse) {
-    extraClasses.push(style.reverse);
+    extraClasses.push(getClass('reverse'));
   }
 
   return Object.keys(props)
     .filter(key => classMap[key])
-    .map(key => style[isInteger(props[key]) ? (classMap[key] + '-' + props[key]) : classMap[key]])
+    .map(key => getClass(isInteger(props[key]) ? (classMap[key] + '-' + props[key]) : classMap[key]))
     .concat(extraClasses);
 }
 
