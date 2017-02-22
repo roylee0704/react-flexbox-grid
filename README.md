@@ -57,6 +57,26 @@ Example
 Looking for example to use `react-flexbox-grid`? Head over to [react-flexbox-grid-example](https://github.com/roylee0704/react-flexbox-grid-example).
 
 
+Advanced composition
+-------
+Functions for generating Row and Column classNames are exported for use in other components.  For example, suppose you have a `MyFormInput` component that should also act as both a `Row` and a `Col`.
+
+```js
+import {getRowClassNames, getColClassNames} from 'react-flexbox-grid'
+
+export default function MyFormInput(props) {
+  return (
+    <form className={getRowclassNames(props)}>
+      <input className={getColClassNames(props)} />
+    </form>
+  );
+}
+
+// Can now be rendered as: <MyFormInput end="sm" sm={8} />
+```
+
+
+
 Installation
 ------------
 

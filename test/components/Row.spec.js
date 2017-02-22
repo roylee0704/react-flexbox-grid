@@ -1,7 +1,7 @@
 import expect from 'expect';
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';
-import Row from '../../src/components/Row';
+import Row, { getRowClassNames } from '../../src/components/Row';
 import style from 'flexboxgrid';
 
 const renderer = TestUtils.createRenderer();
@@ -10,6 +10,10 @@ describe('Row', () => {
   it('Should add "row" class', () => {
     renderer.render(<Row />);
     expect(renderer.getRenderOutput().props.className).toEqual(style.row);
+  });
+
+  it('Computes the classNames', () => {
+    expect(getRowClassNames({ className: 'test', reverse: true })).toEqual(['test', style.row, style.reverse]);
   });
 
   it('Should add "reverse" class if "reverse" property is true', () => {
