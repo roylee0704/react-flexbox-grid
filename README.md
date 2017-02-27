@@ -62,17 +62,20 @@ Advanced composition
 Functions for generating Row and Column classNames are exported for use in other components.  For example, suppose you have a `MyFormInput` component that should also act as both a `Row` and a `Col`.
 
 ```js
-import {getRowClassNames, getColClassNames} from 'react-flexbox-grid'
+import {getRowProps, getColumnProps} from 'react-flexbox-grid'
 
 export default function MyFormInput(props) {
+  const { className: rowClassName } = getRowProps(props);
+  const { className: colClassName, ...myProps } = getColumnProps(props);
+
   return (
-    <form className={getRowClassNames(props)}>
-      <input className={getColClassNames(props)} />
+    <form className={rowClassName}>
+      <input value={myProps.value} className={colClassName} />
     </form>
   );
 }
 
-// Can now be rendered as: <MyFormInput end="sm" sm={8} />
+// Can now be rendered as: <MyFormInput end="sm" sm={8} value="my input value" />
 ```
 
 

@@ -20,7 +20,7 @@ const propTypes = {
   children: PropTypes.node
 };
 
-export function getRowClassNames(props) {
+function getRowClassNames(props) {
   const modificators = [props.className, getClass('row')];
 
   for (let i = 0; i < rowKeys.length; ++i) {
@@ -38,8 +38,12 @@ export function getRowClassNames(props) {
   return modificators;
 }
 
+export function getRowProps(props) {
+  return createProps(propTypes, props, getRowClassNames(props));
+}
+
 export default function Row(props) {
-  return React.createElement(props.tagName || 'div', createProps(propTypes, props, getRowClassNames(props)));
+  return React.createElement(props.tagName || 'div', getRowProps(props));
 }
 
 Row.propTypes = propTypes;
