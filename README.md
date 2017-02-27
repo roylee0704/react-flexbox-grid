@@ -110,19 +110,22 @@ I encourage you to work with webpack but if you want to use `React Flexbox Grid`
 Code snippets
 ------------
 ```jsx
-const {Grid, Row, Col} = require('react-flexbox-grid');
+import React from 'react';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 
-const App = React.createClass({
+class App extends React.Component {
   render() {
     return (
       <Grid>
         <Row>
-          <Col xs={6} md={3}>Hello, world!</Col>
+          <Col xs={6} md={3}>
+            Hello, world!
+          </Col>
         </Row>
       </Grid>
     );
   }
-});
+}
 ```
 Contributors
 -----------
