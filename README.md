@@ -66,7 +66,7 @@ import {getRowClassNames, getColClassNames} from 'react-flexbox-grid'
 
 export default function MyFormInput(props) {
   return (
-    <form className={getRowclassNames(props)}>
+    <form className={getRowClassNames(props)}>
       <input className={getColClassNames(props)} />
     </form>
   );
