@@ -66,7 +66,7 @@ For example, suppose you're using a third party component that accepts a classNa
 
 ```js
 import React from 'react';
-import { getRowProps, getColumnProps } from 'react-flexbox-grid';
+import { Row, Col, getRowProps, getColumnProps } from 'react-flexbox-grid';
 // a component that accepts a className
 import SomeComponent from 'some-package';
 
@@ -81,6 +81,11 @@ export default function MyComponent(props) {
     </form>
   );
 }
+
+MyComponent.propTypes = Object.assign({
+  onChange: React.PropTypes.func.isRequired,
+  value: React.PropTypes.string.isRequired,
+}, Col.propTypes, Row.propTypes);  // Re-use existing Row and Col propType validations
 
 // Can now be rendered as: <MyComponent end="sm" sm={8} value="my input value" onChange={...} />
 ```
