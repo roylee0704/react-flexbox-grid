@@ -59,11 +59,16 @@ Looking for example to use `react-flexbox-grid`? Head over to [react-flexbox-gri
 
 Advanced composition
 -------
-Functions for generating Row and Column classNames are exported for use in other components.  For example, suppose you're using a third party component that accepts a className.
+Functions for generating Row and Column classNames are exported for use in other components.
+
+For example, suppose you're using a third party component that accepts a className and you would like it to be rendered as Column.  You could do so by extracting the column sizing props that `MyComponent` uses and then pass the generated className on to `SomeComponent`
+
 
 ```js
+import React from 'react';
+import { getRowProps, getColumnProps } from 'react-flexbox-grid';
 // a component that accepts a className
-import RandomComponent from 'some-package';
+import SomeComponent from 'some-package';
 
 export default function MyComponent(props) {
   const colProps = getColumnProps(props);
@@ -71,13 +76,13 @@ export default function MyComponent(props) {
 
   return (
     <form className={rowProps.className}>
-      <RandomComponent classname={colProps.className} />
-      <input value={props.value} />
+      <SomeComponent classname={colProps.className} />
+      <input value={props.value} onChange={props.onChange} />
     </form>
   );
 }
 
-// Can now be rendered as: <MyComponent end="sm" sm={8} value="my input value" />
+// Can now be rendered as: <MyComponent end="sm" sm={8} value="my input value" onChange={...} />
 ```
 
 Installation
