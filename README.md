@@ -93,19 +93,13 @@ MyComponent.propTypes = Object.assign({
 Installation
 ------------
 
-React-Flexbox-Grid can be installed as an [npm package](https://www.npmjs.com/package/react-flexbox-grid), along with its peer dependency `flexboxgrid`:
+React-Flexbox-Grid can be installed as an [npm package](https://www.npmjs.com/package/react-flexbox-grid):
 
 ```
-npm i -S react-flexbox-grid flexboxgrid
+npm i -S react-flexbox-grid
 ```
 
-It has peer dependency requirements on `classnames` and `flexboxgrid` modules, which can be installed and added to the package manifest like so:
-
-```
-npm i -S classnames flexboxgrid
-```
-
-Once you have the workflow ready, you can just require and use the components:
+Now you can just import and use the components:
 
 ```jsx
 import React from 'react';

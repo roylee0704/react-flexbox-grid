@@ -22,6 +22,9 @@
     "react",
     "react-component"
   ],
+  "dependencies": {
+    "flexboxgrid": "^6.3.0"
+  },
   "devDependencies": {
     "autoprefixer": "^6.0.3",
     "babel-cli": "^6.4.0",
@@ -85,7 +88,6 @@
   "types": "react-flexbox-grid.d.ts",
   "peerDependencies": {
     "@types/react": "*",
-    "flexboxgrid": "^6.3.0",
     "react": "^0.14.3 || ^15.0.0"
   }
 }
