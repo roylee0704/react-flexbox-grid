@@ -1,70 +1,124 @@
 # react-flexbox-grid
 [![npm version](https://badge.fury.io/js/react-flexbox-grid.svg)](https://badge.fury.io/js/react-flexbox-grid)
 [![Build Status](https://travis-ci.org/roylee0704/react-flexbox-grid.svg)](https://travis-ci.org/roylee0704/react-flexbox-grid)
-[![NPM Status](http://img.shields.io/npm/dm/react-flexbox-grid.svg?style=flat-square)](https://www.npmjs.org/package/react-flexbox-grid)
+[![NPM Status](http://img.shields.io/npm/dm/react-flexbox-grid.svg?style=flat)](https://www.npmjs.org/package/react-flexbox-grid)
 
 
-React-Flexbox-Grid is a set of React components that implement [flexboxgrid.css](https://goo.gl/imrHBZ). It's built on top of some of the trendiest proposals like CSS Modules (written in SASS), Webpack and ES6. The library harmoniously integrates with your Webpack workflow and it's easily customizable and very flexible.
+`react-flexbox-grid` is a set of React components that implement [flexboxgrid.css](https://goo.gl/imrHBZ). It even has an optional support for [CSS Modules](https://github.com/webpack-contrib/css-loader#css-modules) with some extra configuration.
 
 
-http://roylee0704.github.io/react-flexbox-grid/
+***
+<p align="center">**http://roylee0704.github.io/react-flexbox-grid/**</p>
+***
+
+
+Setup
+-----
+
+### Installation
+
+`react-flexbox-grid` can be installed as an [npm package](https://www.npmjs.com/package/react-flexbox-grid):
+
+```
+npm install --save react-flexbox-grid
+```
+
+### Minimal configuration
+
+The recommended way to use `react-flexbox-grid` is with a tool like [webpack](https://webpack.js.org/) or [Meteor](https://www.meteor.com/), make sure you set it up to support requiring CSS files. For example, the minimum required loader configuration for webpack would look like this:
+
+```js
+{
+  test: /\.css$/,
+  loader: 'style-loader!css-loader',
+  include: /flexboxgrid/
+}
+```
+
+`react-flexbox-grid` imports the styles from `flexboxgrid`, that's why we're configuring the loader for it.
+
+### CSS Modules
+
+If you want to use CSS Modules (this is _mandatory_ for versions earlier than v1), webpack's [`css-loader`](https://github.com/webpack-contrib/css-loader) supports this by passing `modules` param in the loader configuration.
+
+First, install `style-loader` and `css-loader` as development dependencies:
+
+```
+npm install --save-dev style-loader css-loader
+```
+
+Next, add a loader for `flexboxgrid` with CSS Modules enabled:
+
+```js
+{
+  test: /\.css$/,
+  loader: 'style-loader!css-loader?modules',
+  include: /flexboxgrid/
+}
+```
+
+Make sure you don't have another CSS loader which also affects `flexboxgrid`. In case you do, exclude `flexboxgrid`, for example:
+
+```js
+{
+  test: /\.css$/,
+  loader: 'style-loader!css-loader!postcss-loader',
+  include: path.join(__dirname, 'node_modules'), // oops, this also includes flexboxgrid
+  exclude: /flexboxgrid/ // so we have to exclude it
+}
+```
+
+Otherwise you would end up with an [obscure error](https://github.com/roylee0704/react-flexbox-grid/issues/94#issuecomment-282825720) because webpack stacks loaders together, it doesn't override them.
+
+### Isomorphic support
+
+See [this comment](https://github.com/roylee0704/react-flexbox-grid/issues/28#issuecomment-198758253).
+
+
+### Not using a bundler?
+
+If you want to use `react-flexbox-grid` the old-fashioned way, you must generate a build with all the CSS and JavaScript and include it in your `index.html`. The components will then be exposed in the `window` object.
 
 
 Usage
 -----
 
-Although there are other ways to use React-Flexbox-Grid, the recommended way is to create a Webpack workflow with [Babel Loader](https://github.com/babel/babel-loader), [CSS Loader](https://github.com/webpack/css-loader) and [SASS Loader](https://github.com/jtangelder/sass-loader). A good starting point is [react-flexbox-grid-example](https://github.com/roylee0704/react-flexbox-grid-example), be sure to also checkout [webpack config](https://github.com/roylee0704/react-flexbox-grid-example/blob/master/webpack.config.js) in the example.
+Now you can import and use the components:
 
+```jsx
+import React from 'react';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 
-
-### Basic webpack configuration
-
-You must configure webpack to load flexboxgrid with [CSS Modules](https://github.com/webpack/css-loader#css-modules), otherwise components from react-flexbox-grid will just have [empty class names](https://github.com/roylee0704/react-flexbox-grid/issues/21).
-
-To do so, first add the loaders required as `devDependencies`:
-
-```
-npm i -D npm style-loader css-loader
-```
-
-Then configure the loaders:
-
-```js
-{
-  test: /\.css$/,
-  loader: 'style!css?modules',
-  include: /flexboxgrid/,
+class App extends React.Component {
+  render() {
+    return (
+      <Grid fluid>
+        <Row>
+          <Col xs={6} md={3}>
+            Hello, world!
+          </Col>
+        </Row>
+      </Grid>
+    );
+  }
 }
 ```
 
-If you have another loader which affects `flexboxgrid`, exclude it from that loader. In this case, also using `postcss` loader:
-
-```js
-{
-  test: /\.css$/,
-  loader: 'style!css!postcss',
-  include: path.join(__dirname, 'node_modules'), // oops, this also includes flexboxgrid
-  exclude: /flexboxgrid/, // so we have to exclude it
-}
-```
-
-Because webpack stacks loaders together, it doesn't override them.
-
-**Note:** If you need isomorphic support see https://github.com/roylee0704/react-flexbox-grid/issues/28#issuecomment-198758253.
 
 Example
 -------
-Looking for example to use `react-flexbox-grid`? Head over to [react-flexbox-grid-example](https://github.com/roylee0704/react-flexbox-grid-example).
+Looking for a complete example? Head over to [react-flexbox-grid-example](https://github.com/roylee0704/react-flexbox-grid-example).
 
 
 Advanced composition
 -------
-Functions for generating Row and Column classNames are exported for use in other components.
 
-For example, suppose you're using a third party component that accepts a className and you would like it to be rendered as Column.  You could do so by extracting the column sizing props that `MyComponent` uses and then pass the generated className on to `SomeComponent`
+We also export functions for generating Row and Column class names for use in other components.
+
+For example, suppose you're using a third party component that accepts `className` and you would like it to be rendered as `Col`.  You could do so by extracting the column sizing props that `MyComponent` uses and then pass the generated className on to `SomeComponent`
 
 
-```js
+```jsx
 import React from 'react';
 import { Row, Col, getRowProps, getColumnProps } from 'react-flexbox-grid';
 // a component that accepts a className
@@ -90,50 +144,6 @@ MyComponent.propTypes = Object.assign({
 // Can now be rendered as: <MyComponent end="sm" sm={8} value="my input value" onChange={...} />
 ```
 
-Installation
-------------
-
-React-Flexbox-Grid can be installed as an [npm package](https://www.npmjs.com/package/react-flexbox-grid):
-
-```
-npm i -S react-flexbox-grid
-```
-
-Now you can just import and use the components:
-
-```jsx
-import React from 'react';
-import { Grid } from 'react-flexbox-grid';
-
-React.render(<Grid />, document.querySelector('#main'))
-```
-
-The previous code creates a React container component based on `React Flexbox Grid` container. It's important to notice that requiring a module from the exposed root of the package will import the **SASS** of the component.
-
-
-I encourage you to work with webpack but if you want to use `React Flexbox Grid` in an old fashioned way, you must generate a build with all the css and javascript and include it in your `index.html`. Then you can use the components exposed in the `window` object.
-
-
-Code snippets
-------------
-```jsx
-import React from 'react';
-import { Grid, Row, Col } from 'react-flexbox-grid';
-
-class App extends React.Component {
-  render() {
-    return (
-      <Grid>
-        <Row>
-          <Col xs={6} md={3}>
-            Hello, world!
-          </Col>
-        </Row>
-      </Grid>
-    );
-  }
-}
-```
 Contributors
 -----------
 [![Roy Lee](https://avatars0.githubusercontent.com/u/3850661?v=3&s=144)](https://github.com/roylee0704/) | [![Helder Santana](https://avatars1.githubusercontent.com/u/134727?v=3&s=144)](https://github.com/heldr/) | [![Matija Marohnić](https://avatars2.githubusercontent.com/u/471278?v=3&s=144)](https://github.com/silvenon)
