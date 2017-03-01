@@ -7,9 +7,7 @@
 `react-flexbox-grid` is a set of React components that implement [flexboxgrid.css](https://goo.gl/imrHBZ). It even has an optional support for [CSS Modules](https://github.com/webpack-contrib/css-loader#css-modules) with some extra configuration.
 
 
-***
-<p align="center">**http://roylee0704.github.io/react-flexbox-grid/**</p>
-***
+**http://roylee0704.github.io/react-flexbox-grid/**
 
 
 Setup
