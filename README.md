@@ -59,23 +59,36 @@ Looking for example to use `react-flexbox-grid`? Head over to [react-flexbox-gri
 
 Advanced composition
 -------
-Functions for generating Row and Column classNames are exported for use in other components.  For example, suppose you have a `MyFormInput` component that should also act as both a `Row` and a `Col`.
+Functions for generating Row and Column classNames are exported for use in other components.
+
+For example, suppose you're using a third party component that accepts a className and you would like it to be rendered as Column.  You could do so by extracting the column sizing props that `MyComponent` uses and then pass the generated className on to `SomeComponent`
+
 
 ```js
-import {getRowClassNames, getColClassNames} from 'react-flexbox-grid'
+import React from 'react';
+import { Row, Col, getRowProps, getColumnProps } from 'react-flexbox-grid';
+// a component that accepts a className
+import SomeComponent from 'some-package';
 
-export default function MyFormInput(props) {
+export default function MyComponent(props) {
+  const colProps = getColumnProps(props);
+  const rowProps = getRowProps(props);
+
   return (
-    <form className={getRowClassNames(props)}>
-      <input className={getColClassNames(props)} />
+    <form className={rowProps.className}>
+      <SomeComponent classname={colProps.className} />
+      <input value={props.value} onChange={props.onChange} />
     </form>
   );
 }
 
-// Can now be rendered as: <MyFormInput end="sm" sm={8} />
+MyComponent.propTypes = Object.assign({
+  onChange: React.PropTypes.func.isRequired,
+  value: React.PropTypes.string.isRequired,
+}, Col.propTypes, Row.propTypes);  // Re-use existing Row and Col propType validations
+
+// Can now be rendered as: <MyComponent end="sm" sm={8} value="my input value" onChange={...} />
 ```
-
-
 
 Installation
 ------------

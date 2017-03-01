@@ -1,7 +1,7 @@
 import expect from 'expect';
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';
-import Col, { getColClassNames } from '../../src/components/Col';
+import Col, { getColumnProps } from '../../src/components/Col';
 import style from 'flexboxgrid';
 
 const renderer = TestUtils.createRenderer();
@@ -17,8 +17,10 @@ describe('Col', () => {
     expect(className).toContain(style['col-lg-4']);
   });
 
-  it('Computes the classNames', () => {
-    expect(getColClassNames({ className: 'test', xs: 12 })).toEqual([style['col-xs-12'], 'test']);
+  it('Computes the column properties', () => {
+    expect(getColumnProps({ className: 'test', xs: 12, unknown: 'foo' })).toEqual({
+      unknown: 'foo', className: `${style['col-xs-12']} test`
+    });
   });
 
   it('Should add "first-*" class if "first" property is set', () => {

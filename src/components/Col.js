@@ -35,7 +35,7 @@ function isInteger(value) {
   return typeof value === 'number' && isFinite(value) && Math.floor(value) === value;
 }
 
-export function getColClassNames(props) {
+function getColClassNames(props) {
   const extraClasses = [];
 
   if (props.className) {
@@ -60,10 +60,13 @@ export function getColClassNames(props) {
     .concat(extraClasses);
 }
 
-export default function Col(props) {
-  const classNames = getColClassNames(props);
+export function getColumnProps(props) {
+  return createProps(propTypes, props, getColClassNames(props));
+}
 
-  return React.createElement(props.tagName || 'div', createProps(propTypes, props, classNames));
+export default function Col(props) {
+  const { tagName, ...columnProps } = props;
+  return React.createElement(tagName || 'div', getColumnProps(columnProps));
 }
 
 Col.propTypes = propTypes;
