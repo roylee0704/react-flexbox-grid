@@ -14,7 +14,6 @@ const propTypes = {
   lgOffset: PropTypes.number,
   first: ViewportSizeType,
   last: ViewportSizeType,
-  reverse: PropTypes.bool,
   className: PropTypes.string,
   tagName: PropTypes.string,
   children: PropTypes.node
@@ -48,10 +47,6 @@ function getColClassNames(props) {
 
   if (props.last) {
     extraClasses.push(getClass('last-' + props.last));
-  }
-
-  if (props.reverse) {
-    extraClasses.push(getClass('reverse'));
   }
 
   return Object.keys(props)

@@ -40,7 +40,6 @@ declare namespace __ReactFlexboxGrid {
     readonly lgOffset?: number,
     readonly first?: ViewportSizeType,
     readonly last?: ViewportSizeType,
-    readonly reverse?: boolean,
     readonly className?: string,
     readonly tagName?: string,
   }
