@@ -102,6 +102,10 @@ class App extends React.Component {
 }
 ```
 
+### Gotcha
+
+For the time being always use `fluid` for `<Grid>` to prevent [horizontal overflow issues](https://github.com/kristoferjoseph/flexboxgrid/issues/144).
+
 
 Example
 -------
