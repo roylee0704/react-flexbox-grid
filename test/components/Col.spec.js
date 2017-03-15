@@ -28,11 +28,6 @@ describe('Col', () => {
     expect(renderer.getRenderOutput().props.className).toContain(style['first-md']);
   });
 
-  it('Should add "reverse" class if "reverse" property is true', () => {
-    renderer.render(<Col reverse/>);
-    expect(renderer.getRenderOutput().props.className).toContain(style.reverse);
-  });
-
   it('Should not replace class', () => {
     renderer.render(<Col className="foo" md={3} />);
 
