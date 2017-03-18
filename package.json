@@ -2,11 +2,11 @@
   "name": "react-flexbox-grid",
   "description": "A set of React components implementing flexboxgrid with the power of CSS Modules",
   "homepage": "https://github.com/roylee0704/react-flexbox-grid",
-  "version": "0.10.2",
+  "version": "1.0.0",
   "main": "lib/index.js",
   "author": {
-    "name": "Roy Lee",
-    "email": "roylee0704@gmail.com"
+    "email": "roylee0704@gmail.com",
+    "name": "Roy Lee"
   },
   "repository": {
     "type": "git",
@@ -85,9 +85,9 @@
     "test:watch": "cross-env NODE_ENV=test karma start --no-single-run"
   },
   "license": "MIT",
-  "types": "react-flexbox-grid.d.ts",
   "peerDependencies": {
     "@types/react": "*",
     "react": "^0.14.3 || ^15.0.0"
-  }
+  },
+  "types": "react-flexbox-grid.d.ts"
 }
