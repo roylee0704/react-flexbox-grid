@@ -1,3 +1,7 @@
+doc
+spec
+test
+
 node_modules
 .idea
 .travis.yml
