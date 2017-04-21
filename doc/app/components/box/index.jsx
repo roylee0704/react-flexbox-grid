@@ -1,13 +1,14 @@
-import React, {PropTypes} from 'react';
-import {Col} from 'react-flexbox-grid';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Col } from 'react-flexbox-grid';
 import box from './style';
 
 const Box = (props) => {
   return (
     <Col {...props}>
-        <div className = {box[props.type || 'box']}>
-          {props.children}
-        </div>
+      <div className={box[props.type || 'box']}>
+        {props.children}
+      </div>
     </Col>
   );
 };
