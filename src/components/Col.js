@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import createProps from '../createProps';
 import getClass from '../classNames';
 import { ColumnSizeType, ViewportSizeType } from '../types';
