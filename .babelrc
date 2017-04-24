@@ -1,8 +1,14 @@
 {
-  "presets": ["es2015-loose", "stage-0", "react"],
-  "env": {
-    "development": {
-      "presets": ["react-hmre"]
-    }
-  }
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "node": "current"
+        }
+      }
+    ],
+    "stage-1",
+    "react"
+  ]
 }

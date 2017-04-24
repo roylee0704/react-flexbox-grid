@@ -15,6 +15,11 @@ module.exports = function karmaConfig(config) {
     webpack: webpackConfig,
     webpackServer: {
       noInfo: true
-    }
+    },
+    plugins: [
+      'karma-webpack',
+      'karma-phantomjs-launcher',
+      'karma-mocha'
+    ]
   });
 };

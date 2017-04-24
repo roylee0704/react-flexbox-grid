@@ -6,8 +6,8 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
+        loader: 'babel-loader?presets[]=env',
         exclude: /(node_modules)/,
-        loader: 'babel'
       }, {
         test: /(\.scss|\.css)$/,
         loader: 'style!css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss!sass'
