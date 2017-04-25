@@ -6,7 +6,7 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        loader: 'babel-loader?presets[]=env',
+        loader: 'babel',
         exclude: /(node_modules)/,
       }, {
         test: /(\.scss|\.css)$/,
