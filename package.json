@@ -33,6 +33,7 @@
     "babel-core": "^6.24.1",
     "babel-eslint": "^7.2.1",
     "babel-loader": "^6.4.1",
+    "babel-plugin-css-modules-transform": "^1.2.7",
     "babel-plugin-react-transform": "^2.0.0",
     "babel-polyfill": "^6.23.0",
     "babel-preset-env": "^1.4.0",
