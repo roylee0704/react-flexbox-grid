@@ -70,13 +70,13 @@ Otherwise you would end up with an [obscure error](https://github.com/roylee0704
 
 ### Isomorphic support
 
-See [this comment](https://github.com/roylee0704/react-flexbox-grid/issues/28#issuecomment-198758253).
+Try: [this comment](https://github.com/roylee0704/react-flexbox-grid/issues/28#issuecomment-198758253).
 
+If this doesn't work for you, use the build located in the dist directory. This build removes all `.css` imports and extracts the relevant css into `react-flexbox-grid/dist/react-flexbox-grid.css`.
 
 ### Not using a bundler?
 
-If you want to use `react-flexbox-grid` the old-fashioned way, you must generate a build with all the CSS and JavaScript and include it in your `index.html`. The components will then be exposed in the `window` object.
-
+Use the pre-bundled build located in the dist directory. It contains a single umd js distributable and built css file.
 
 Usage
 -----
