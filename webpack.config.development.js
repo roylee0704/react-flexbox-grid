@@ -1,7 +1,6 @@
 const pkg = require('./package');
 const webpack = require('webpack');
 const path = require('path');
-const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
@@ -16,23 +15,12 @@ module.exports = {
     publicPath: '/build/',
     filename: 'spec.js'
   },
-  resolve: {
-    extensions: ['', '.js', '.scss', '.json']
-  },
   module: {
-    loaders: [
-      {
-        test: /\.js$/,
-        exclude: /(node_modules)/,
-        loader: 'babel'
-      },
-      {
-        test: /(\.scss|\.css)$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss!sass?sourceMap')
-      }
-    ]
+    loaders: [{
+      test: /(\.scss|\.css)$/,
+      loader: ExtractTextPlugin.extract('style-loader', 'css?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss!sass?sourceMap')
+    }]
   },
-  postcss: [autoprefixer],
   plugins: [
     new ExtractTextPlugin('spec.css', {allChunks: true}),
     new webpack.HotModuleReplacementPlugin(),

@@ -3,14 +3,5 @@
     "es2015",
     "stage-1",
     "react"
-  ],
-  "plugins": [
-    [
-      "css-modules-transform",
-      {
-        "camelCase": true,
-        "extractCss": "lib/index.css"
-      }
-    ]
   ]
 }

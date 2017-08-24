@@ -1,7 +1,7 @@
 const path = require('path');
 const express = require('express');
 const webpack = require('webpack');
-const config = require('./webpack.config.development');
+const config = require('./webpack.config');
 const port = 8080;
 
 const app = express();
