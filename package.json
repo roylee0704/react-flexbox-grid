@@ -2,7 +2,7 @@
   "name": "react-flexbox-grid",
   "description": "A set of React components implementing flexboxgrid with the power of CSS Modules",
   "homepage": "https://github.com/roylee0704/react-flexbox-grid",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "main": "lib/index.js",
   "author": {
     "email": "roylee0704@gmail.com",
@@ -76,8 +76,8 @@
     "build": "cross-env NODE_ENV=production npm run compile",
     "clean": "rimraf ./lib",
     "compile": "npm run compile:lib && npm run compile:dist",
-    "compile:lib": "rm -rf lib && ./node_modules/.bin/babel -d ./lib ./src",
     "compile:dist": "rm -rf dist && cross-env ./node_modules/.bin/webpack",
+    "compile:lib": "rm -rf lib && ./node_modules/.bin/babel -d ./lib ./src",
     "lint": "eslint src test",
     "patch": "bumped release patch",
     "prebuild": "npm run clean",
