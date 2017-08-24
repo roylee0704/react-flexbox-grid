@@ -33,7 +33,6 @@
     "babel-core": "^6.24.1",
     "babel-eslint": "^7.2.1",
     "babel-loader": "^6.4.1",
-    "babel-plugin-css-modules-transform": "^1.2.7",
     "babel-plugin-react-transform": "^2.0.0",
     "babel-polyfill": "^6.23.0",
     "babel-preset-env": "^1.4.0",
@@ -70,12 +69,15 @@
     "style-loader": "^0.12.3",
     "webpack": "^1.12.9",
     "webpack-dev-middleware": "^1.4.0",
-    "webpack-hot-middleware": "^2.4.1"
+    "webpack-hot-middleware": "^2.4.1",
+    "webpack-merge": "^4.1.0"
   },
   "scripts": {
     "build": "cross-env NODE_ENV=production npm run compile",
     "clean": "rimraf ./lib",
-    "compile": "./node_modules/.bin/babel -d ./lib ./src",
+    "compile": "npm run compile:lib && npm run compile:dist",
+    "compile:lib": "rm -rf lib && ./node_modules/.bin/babel -d ./lib ./src",
+    "compile:dist": "rm -rf dist && cross-env ./node_modules/.bin/webpack",
     "lint": "eslint src test",
     "patch": "bumped release patch",
     "prebuild": "npm run clean",
