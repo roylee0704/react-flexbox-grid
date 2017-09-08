@@ -3,19 +3,19 @@
 // Definitions by: Ruslan Ibragimov <https://github.com/IRus>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
-import {Component} from 'react';
+import {Component, HTMLAttributes} from 'react';
 
 declare namespace __ReactFlexboxGrid {
   type ViewportSizeType = 'xs' | 'sm' | 'md' | 'lg';
   type ColumnSizeType = number | boolean;
 
-  export interface GridProps {
+  export interface GridProps extends HTMLAttributes<HTMLDivElement> {
     readonly fluid?: boolean,
     readonly className?: string,
     readonly tagName?: string,
   }
 
-  export interface RowProps {
+  export interface RowProps extends HTMLAttributes<HTMLDivElement> {
     readonly reverse?: boolean,
     readonly start?: ViewportSizeType,
     readonly center?: ViewportSizeType,
@@ -29,7 +29,7 @@ declare namespace __ReactFlexboxGrid {
     readonly tagName?: string,
   }
 
-  export interface ColProps {
+  export interface ColProps extends HTMLAttributes<HTMLDivElement> {
     readonly xs?: ColumnSizeType,
     readonly sm?: ColumnSizeType,
     readonly md?: ColumnSizeType,
