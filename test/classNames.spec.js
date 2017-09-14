@@ -1,5 +1,5 @@
 import expect from 'expect';
-import style from 'flexboxgrid';
+import style from 'flexboxgrid2';
 import getClass from '../src/classNames';
 
 describe('classNames lookups', () => {

@@ -26,7 +26,7 @@ const Home = () => (
     <Grid fluid className={home.wrap}>
       <Section
         title="Responsive"
-        description="Responsive modifiers enable specifying different column sizes, offsets, alignment and distribution at xs, sm, md & lg viewport widths.">
+        description="Responsive modifiers enable specifying different column sizes, offsets, alignment and distribution at xs, sm, md, lg & xl viewport widths.">
         <Row>
           <Box type="row" xs={12} sm={3} md={2} lg={1} />
           <Box type="row" xs={6} sm={6} md={8} lg={10} />

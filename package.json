@@ -23,7 +23,7 @@
     "react-component"
   ],
   "dependencies": {
-    "flexboxgrid": "^6.3.0",
+    "flexboxgrid2": "^7.0.0-alpha7",
     "prop-types": "^15.5.8"
   },
   "devDependencies": {
@@ -48,7 +48,6 @@
     "expect": "^1.13.0",
     "express": "^4.13.3",
     "extract-text-webpack-plugin": "^0.8.2",
-    "flexboxgrid": "^6.3.0",
     "isparta": "^4.0.0",
     "jsdom": "^7.0.2",
     "karma": "^1.6.0",
