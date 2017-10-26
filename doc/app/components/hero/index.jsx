@@ -11,7 +11,7 @@ const Hero = () => {
         <h1 className={style.headline}>React-FlexBox-Grid</h1>
       </Row>
       <Row className={style.description} center="xs">
-        <code>React(CSS-Modules(flexboxgrid.css));</code>
+        <code>React(CSS-Modules(flexboxgrid2.css));</code>
       </Row>
       <Row center="xs">
         <Button url="https://github.com/roylee0704/react-flexbox-grid">Github</Button>
