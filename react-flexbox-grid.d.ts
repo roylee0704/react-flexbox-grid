@@ -57,6 +57,9 @@ declare namespace __ReactFlexboxGrid {
   export class Col extends Component<ColProps, {}> {
 
   }
+    
+  export const getRowProps: (props: any) => any;
+  export const getColumnProps: (props: any) => any;
 }
 
 export = __ReactFlexboxGrid;
