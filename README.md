@@ -101,6 +101,24 @@ class App extends React.Component {
   }
 }
 ```
+### Columns
+
+Each `Row` within a grid consists of 12 `Col`.
+
+### Breakpoints
+
+Here are the breakpoints for each viewport.
+
+- `xs`
+  - Width &lt; `576px`
+- `sm`
+  - Width &ge; `576px`
+- `md`
+  - Width &ge;`768px`
+- `lg`
+  - Width &ge; `992px`
+- `xl`
+  - Width &ge;`1200px`
 
 ### Gotcha
 
