@@ -1,7 +1,3 @@
-> `react-flexbox-grid` is being sponsored by the following tool; please help to support us by taking a look and signing up to a free trial
-> <a href="https://tracking.gitads.io/?repo=react-flexbox-grid"><img src="https://images.gitads.io/react-flexbox-grid" alt="GitAds"/></a>
-
-
 # react-flexbox-grid
 [![npm version](https://badge.fury.io/js/react-flexbox-grid.svg)](https://badge.fury.io/js/react-flexbox-grid)
 [![Build Status](https://travis-ci.org/roylee0704/react-flexbox-grid.svg)](https://travis-ci.org/roylee0704/react-flexbox-grid)
