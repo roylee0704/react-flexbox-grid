@@ -54,7 +54,7 @@
     "karma-phantomjs-launcher": "^1.0.4",
     "karma-webpack": "^2.0.3",
     "mocha": "^3.1.2",
-    "node-sass": "^3.4.2",
+    "node-sass": "^4.13.1",
     "phantomjs-prebuilt": "^2.1.14",
     "postcss-loader": "^0.7.0",
     "react": "^15.5.4",
