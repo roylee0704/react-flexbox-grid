@@ -132,7 +132,7 @@ export default function MyComponent(props) {
 
   return (
     <form className={rowProps.className}>
-      <SomeComponent classname={colProps.className} />
+      <SomeComponent className={colProps.className} />
       <input value={props.value} onChange={props.onChange} />
     </form>
   );
